@@ -8351,3 +8351,74 @@ Stack trace:
 REQUEST_URI=/tesis/mmio/index.php/evaluacion/cuestionario
 in /var/www/html/tesis/mmio/protected/controllers/EvaluacionController.php (191)
 in /var/www/html/tesis/mmio/index.php (13)
+2015/09/10 13:48:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/marco/dimensiones.png"' in /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/marco/di...')
+#1 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Users/josefernandez/Documents/Proyectos/SEMMIO/mmio/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/marco/dimensiones.png
+HTTP_REFERER=http://semmio/index.php/
+---
+2015/09/10 13:48:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/marco/dimensiones.png"' in /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('images/marco/di...')
+#1 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Users/josefernandez/Documents/Proyectos/SEMMIO/mmio/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/images/marco/dimensiones.png
+HTTP_REFERER=http://semmio/index.php/
+---
+2015/09/10 16:36:12 [error] [php] Undefined variable: preguntas (/Users/josefernandez/Documents/Proyectos/SEMMIO/mmio/protected/views/metrica/index.php:18)
+Stack trace:
+#0 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/web/CController.php(869): MetricaController->renderFile()
+#1 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/web/CController.php(782): MetricaController->renderPartial()
+#2 /Users/josefernandez/Documents/Proyectos/SEMMIO/mmio/protected/controllers/MetricaController.php(131): MetricaController->render()
+#3 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/web/actions/CInlineAction.php(49): MetricaController->actionIndex()
+#4 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/web/filters/CFilterChain.php(133): MetricaController->runAction()
+#6 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/web/filters/CInlineFilter.php(58): MetricaController->filterAccessControl()
+#9 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/web/CController.php(265): MetricaController->runActionWithFilters()
+#12 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/web/CWebApplication.php(282): MetricaController->run()
+#13 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /Users/josefernandez/Documents/Proyectos/SEMMIO/mmio/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/metrica/index
+in /Users/josefernandez/Documents/Proyectos/SEMMIO/mmio/protected/views/metrica/index.php (18)
+in /Users/josefernandez/Documents/Proyectos/SEMMIO/mmio/protected/controllers/MetricaController.php (131)
+in /Users/josefernandez/Documents/Proyectos/SEMMIO/mmio/index.php (13)
+2015/09/10 17:01:01 [error] [php] Undefined variable: dataProvider (/Users/josefernandez/Documents/Proyectos/SEMMIO/mmio/protected/views/metrica/_view.php:7)
+Stack trace:
+#0 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/zii/widgets/CListView.php(291): MetricaController->renderFile()
+#1 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/zii/widgets/CBaseListView.php(181): CListView->renderItems()
+#2 unknown(0): CListView->renderSection()
+#3 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/zii/widgets/CBaseListView.php(164): preg_replace_callback()
+#4 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/zii/widgets/CBaseListView.php(149): CListView->renderContent()
+#5 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/web/CBaseController.php(181): CListView->run()
+#6 /Users/josefernandez/Documents/Proyectos/SEMMIO/mmio/protected/views/metrica/index.php(23): MetricaController->widget()
+#7 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/web/CBaseController.php(126): require()
+#8 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/web/CBaseController.php(95): MetricaController->renderInternal()
+#9 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/web/CController.php(869): MetricaController->renderFile()
+#10 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/web/CController.php(782): MetricaController->renderPartial()
+#11 /Users/josefernandez/Documents/Proyectos/SEMMIO/mmio/protected/controllers/MetricaController.php(131): MetricaController->render()
+#12 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/web/actions/CInlineAction.php(49): MetricaController->actionIndex()
+#13 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#14 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/web/filters/CFilterChain.php(133): MetricaController->runAction()
+#15 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#16 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#17 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/web/filters/CInlineFilter.php(58): MetricaController->filterAccessControl()
+#18 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#19 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/web/CController.php(291): CFilterChain->run()
+#20 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/web/CController.php(265): MetricaController->runActionWithFilters()
+#21 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/web/CWebApplication.php(282): MetricaController->run()
+#22 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#23 /Users/josefernandez/Documents/Proyectos/SEMMIO/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#24 /Users/josefernandez/Documents/Proyectos/SEMMIO/mmio/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/metrica/index
+in /Users/josefernandez/Documents/Proyectos/SEMMIO/mmio/protected/views/metrica/_view.php (7)
+in /Users/josefernandez/Documents/Proyectos/SEMMIO/mmio/protected/views/metrica/index.php (23)
+in /Users/josefernandez/Documents/Proyectos/SEMMIO/mmio/protected/controllers/MetricaController.php (131)

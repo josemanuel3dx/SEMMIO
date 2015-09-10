@@ -193,7 +193,11 @@ class EvaluacionController extends Controller
 		$id_evaluacion = $_GET['id_evaluacion'];
 		
 		$evaluacion=Evaluacion::model()->findByAttributes(array('id_evaluacion'=>$id_evaluacion));
-        
+     
+
+
+
+        //Traer todos los ids de los aspecto de la matriz dada
         $aspectos = Yii::app()->db->createCommand("SELECT * FROM aspecto WHERE id_matriz=".$evaluacion->id_matriz)->queryAll();
         
         $todas_carac = array();
@@ -204,27 +208,40 @@ class EvaluacionController extends Controller
 
 		$separado_por_comas = implode(",", $todas_carac);
         
+
+
+
+        //Preguntas asociadas a cada aspecto
         $preguntas = Yii::app()->db->createCommand("SELECT * FROM pregunta WHERE id_aspecto in (".$separado_por_comas.")")->queryAll();
-        
-        $todas_preguntas = array();
+
+
+
+        /*$todas_preguntas = array();
         
         foreach($preguntas as $preg){
 			$todas_preguntas [] = $preg['id_pregunta']; 
 		}
 		
 		$separado_por_comas_preg = implode(",", $todas_preguntas);
-           
-        $posibles_respuestas = Yii::app()->db->createCommand("SELECT * FROM opcion_respuesta WHERE id_pregunta in (".$separado_por_comas_preg.")")->queryAll();
         
+
+		//var_dump("<pre>".print_r($preguntas,TRUE)."</pre>");
+
+
+
+        //Traer todas las metricas asociadas a las preguntas
+        $posibles_respuestas = Yii::app()->db->createCommand("SELECT * FROM opcion_respuesta WHERE id_pregunta in (".$separado_por_comas_preg.")")->queryAll();
+
         $todas_respuestas = array();
         
         foreach($posibles_respuestas as $pr){
 			$todas_respuestas [] = $pr['id_respuesta']; 
 		}
-		
-		$separado_por_comas_re = implode(",", $todas_respuestas);
+
+		$separado_por_comas_re = implode(",", $todas_respuestas);*/
+
          
-		$this->render("cuestionario",array("preguntas_basa"=>$preguntas,"mode1"=>$evaluacion,"id"=>$id_evaluacion,"comas"=>$separado_por_comas,"comas2"=>$separado_por_comas_preg,"comas3"=>$separado_por_comas_re));
+		$this->render("cuestionario",array("preguntas_basa"=>$preguntas,"mode1"=>$evaluacion,"id"=>$id_evaluacion));
 	}	 
 		 
 	/**

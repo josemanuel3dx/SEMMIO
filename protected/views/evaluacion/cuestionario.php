@@ -13,12 +13,12 @@
 	);
 ?>
 
-<script>
+<!--<script>
 	$(document).ready(function(){
 	    $("select[name=empresa_evaluacion]").change(function(){
 		   id_matriz = $('select[name=empresa_evaluacion]').val();
 		   $.ajax({
-			        url: <?php echo "'".CController::createUrl('evaluacion/evaluar_mostrar')."'"; ?>,
+			        url: <?php /*echo "'".CController::createUrl('evaluacion/evaluar_mostrar')."'"; */?>,
 			       	type: "GET",
 			       	data: {'id_empresa' : $('select[name=empresa_evaluacion]').val()},
 			       	dataType: 'json',
@@ -31,7 +31,7 @@
 	        });
 	    });
 	});
-</script>
+</script>-->
 
 <?php $evaluacion=Evaluacion::model()->findByAttributes(array('id_evaluacion'=>$id)); ?>
 <?php $nombre_empresa=Empresa::model()->findByAttributes(array('id_empresa'=>$evaluacion->id_empresa)); ?>
@@ -63,7 +63,10 @@
 			</tr>
 			<ol>
 				<?php
+
+					//Ordenar por id_pregunta 
 					asort($preguntas_basa); // added line
+
 					foreach($preguntas_basa as $preguntas_f){ ?>
 						<tr>
 							<td> <?php echo '<li>'.$preguntas_f['descripcion_pregunta']; ?> <br /><br />
@@ -74,13 +77,14 @@
 									LEFT JOIN metrica b on a.id_metrica = b.id_metrica
 									WHERE id_pregunta =".$preguntas_f['id_pregunta']." order by valor DESC")->queryAll();
 									
-									foreach($posibles_respuestas as $resp){
-									echo '<input type="radio" name="preg_[p_'.$preguntas_f['id_pregunta'].']" value="'.$resp['id_metrica'].'">'.$resp['ponderacion'].') '.$resp['nombre'].'<br />'; if($resp['ponderacion'] == 0) echo '<br />';
+									foreach($posibles_respuestas as $resp) {
+										echo '<input type="radio" name="preg_[p_'.$preguntas_f['id_pregunta'].']" value="'.$resp['id_metrica'].'">'.$resp['ponderacion'].') '.$resp['nombre'].'<br />'; 
+										if($resp['ponderacion'] == 0) echo '<br />';
 									}
 								?>
 						    </td>
 						</tr>
-					<?php } ?>
+					<?php } ?> 
 			</ol>
 
 			<tr><td><p><input type="submit" /></p></td></tr>
