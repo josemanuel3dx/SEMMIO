@@ -39,7 +39,7 @@
 
 <div class="form">
 
-	<form action="procesar_cuestionario" method="post">
+	<form action="procesarRespuestas" method="post">
 
 		<center><p><b>CUESTIONARIO</b></p></center>
 
@@ -62,33 +62,29 @@
 				<td>&nbsp;</td>
 			</tr>
 			<ol>
-				<?php
+				<?php //var_dump("<pre>".print_r($preguntas,TRUE)."</pre>"); ?>
 
-					//Ordenar por id_pregunta 
-					asort($preguntas_basa); // added line
+				<?php foreach($dataVista as $pregunta) { ?>
 
-					foreach($preguntas_basa as $preguntas_f){ ?>
-						<tr>
-							<td> <?php echo '<li>'.$preguntas_f['descripcion_pregunta']; ?> <br /><br />
-					
-								<?php $posibles_respuestas = Yii::app()->db->createCommand("SELECT a.id_pregunta id_pregunta, 
-									b.nombre_metrica nombre, b.valor ponderacion, b.id_metrica id_metrica
-									FROM opcion_respuesta a
-									LEFT JOIN metrica b on a.id_metrica = b.id_metrica
-									WHERE id_pregunta =".$preguntas_f['id_pregunta']." order by valor DESC")->queryAll();
-									
-									foreach($posibles_respuestas as $resp) {
-										echo '<input type="radio" name="preg_[p_'.$preguntas_f['id_pregunta'].']" value="'.$resp['id_metrica'].'">'.$resp['ponderacion'].') '.$resp['nombre'].'<br />'; 
-										if($resp['ponderacion'] == 0) echo '<br />';
-									}
-								?>
-						    </td>
-						</tr>
-					<?php } ?> 
+					<tr>
+						<td> <?php echo '<li>'.$pregunta['descripcion_pregunta']; ?> <br /><br />
+				
+							<?php
+
+								foreach($pregunta['metricas'] as $value) {
+									echo '<input type="radio" name="PregForm['.$pregunta['id_pregunta'].']" value="'.$value['id_metrica'].'">'.$value['ponderacion'].') '.$value['nombre'].'<br />'; 
+									if($value['ponderacion'] == 0) 
+										echo '<br />';
+								}
+							?>
+					    </td>
+					</tr>
+
+				<?php } ?> 
 			</ol>
 
-			<tr><td><p><input type="submit" /></p></td></tr>
-			<input type="hidden" id="id_evaluacion" name="id_evaluacion" value="<?php echo $id ?>">
+			<tr><td><p><input type="submit" value="Continuar" /></p></td></tr>
+			<input type="hidden" name="id_evaluacion" value="<?php echo $id ?>">
 	 
 	 	</table>
 
