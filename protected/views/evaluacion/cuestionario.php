@@ -39,7 +39,7 @@
 
 <div class="form">
 
-	<form action="procesarRespuestas" method="post">
+	<form action="cuestionario?id_evaluacion=<?php echo $id; ?>" method="post">
 
 		<center><p><b>CUESTIONARIO</b></p></center>
 
@@ -57,6 +57,16 @@
 			</tr>
 			<tr>
 				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>
+					<?php 
+						//Imprimir Errores de Validacion
+						foreach(Yii::app()->user->getFlashes() as $key => $message) {
+					  		echo '<div class="flash-' . $key . '"><b>'.$key.'</b>: ' . $message . "</div>\n";
+					    }  
+					?>
+				</td>
 			</tr>
 			<tr>
 				<td>&nbsp;</td>
@@ -84,7 +94,7 @@
 			</ol>
 
 			<tr><td><p><input type="submit" value="Continuar" /></p></td></tr>
-			<input type="hidden" name="id_evaluacion" value="<?php echo $id ?>">
+			<input type="hidden" name="controlForm" value="true">
 	 
 	 	</table>
 
