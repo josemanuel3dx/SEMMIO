@@ -190,43 +190,83 @@ class EvaluacionController extends Controller
 		 
 	public function actionCuestionario(){
 
+		//Cantidad de preguntas q se le van a mostrar al usuario
+		$cantPregUser=6;
+		//Obtener id de evaluacion
 		$id_evaluacion = $_GET['id_evaluacion'];
-		
+		//Consultar evaluacion
 		$evaluacion=Evaluacion::model()->findByAttributes(array('id_evaluacion'=>$id_evaluacion));
-        
-        $aspectos = Yii::app()->db->createCommand("SELECT * FROM aspecto WHERE id_matriz=".$evaluacion->id_matriz)->queryAll();
-        
-        $todas_carac = array();
-        
-        foreach($aspectos as $carac){
-			$todas_carac [] = $carac['id_aspecto']; 
+		//Form de evaluacion
+		$evalForm = new EvaluacionForm($id_evaluacion,$evaluacion->id_matriz);
+
+
+
+
+		//Pregunta Actual y cantidad de preguntas restantes
+		$preguntaActual = $evaluacion->pregunta_actual;
+		$cantPregRestantes = $evalForm->cantPreg - $evaluacion->pregunta_actual;
+
+		//Validamos si se esta llegando al final del cuestionario
+		if($cantPregRestantes<$cantPregUser)
+			$cantPregUser = $cantPregRestantes;
+
+		//Verificar si tenemos valores por POST para anadirlos
+		if(isset($_POST['controlForm'])) {
+
+			if (!isset($_POST['PregForm']) || ((count($_POST['PregForm']) < $cantPregUser) && ($cantPregRestantes >= $cantPregUser)))  {
+
+				Yii::app()->user->setFlash("error", "Usted debe responder todas las preguntas de esta sección para Continuar.");
+				$evalForm->generarDataVista($preguntaActual,$cantPregUser);
+				$this->render("cuestionario",array("id"=>$id_evaluacion, "dataVista" => $evalForm->dataVista));
+				Yii::app()->end();
+			}
+			//Insertamos las preg y sus resp en resultado
+			foreach($_POST['PregForm'] as $id_preg => $id_resp) {
+				 			
+				$opcion_resp = Yii::app()->db->createCommand()->insert('resultado',array('id_pregunta'=>$id_preg,'id_respuesta'=>$id_resp,'id_evaluacion'=>$id_evaluacion));			 
+			}
+
+			Yii::app()->user->setFlash("success", "Sus respuestas anteriores fueron almacenadas correctamente.");
+			//Actualizamos el atributo preguntaActual
+			$evaluacion->pregunta_actual+=count($_POST['PregForm']);
+			$opcion_respUpdate = $evaluacion->save();
 		}
 
-		$separado_por_comas = implode(",", $todas_carac);
-        
-        $preguntas = Yii::app()->db->createCommand("SELECT * FROM pregunta WHERE id_aspecto in (".$separado_por_comas.")")->queryAll();
-        
-        $todas_preguntas = array();
-        
-        foreach($preguntas as $preg){
-			$todas_preguntas [] = $preg['id_pregunta']; 
+
+		
+
+		//Pregunta Actual y cantidad de preguntas restantes
+		$preguntaActual = $evaluacion->pregunta_actual;
+		$cantPregRestantes = $evalForm->cantPreg - $evaluacion->pregunta_actual;
+
+		//Validamos si se esta llegando al final del cuestionario
+		if($cantPregRestantes<$cantPregUser)
+			$cantPregUser = $cantPregRestantes;
+
+		//Render nuevas preguntas o finalizar evaluacion
+		if($cantPregRestantes>0) {
+
+			//Generar las preguntas a mostrar
+			$evalForm->generarDataVista($preguntaActual,$cantPregUser);
+			
+			$this->render("cuestionario",array("id"=>$id_evaluacion, "dataVista" => $evalForm->dataVista));
+
+		}
+		elseif ($cantPregRestantes==0) {
+
+			//Al llegar a este punto ya podemos cambiar el atributo estatus_evaluacion a 0
+			//Nota: Este codigo es el q estaba al final del metodo procesar_Cuestionario
+			$evaluacion->estatus_evaluacion=0;
+			$act_evaluacion = $evaluacion->save();
+				 
+			$mode1='Felicidades has completado el cuestionario.';
+			$boton_resultado = '<a href="reporte_grafico?id_evaluacion='.$id_evaluacion.'">Mostrar Resultado</a> ';
+			$this->render("procesar",array("mode1"=>$mode1,"id_evaluacion"=>$id_evaluacion,"boton"=>$boton_resultado));
 		}
 		
-		$separado_por_comas_preg = implode(",", $todas_preguntas);
-           
-        $posibles_respuestas = Yii::app()->db->createCommand("SELECT * FROM opcion_respuesta WHERE id_pregunta in (".$separado_por_comas_preg.")")->queryAll();
-        
-        $todas_respuestas = array();
-        
-        foreach($posibles_respuestas as $pr){
-			$todas_respuestas [] = $pr['id_respuesta']; 
-		}
-		
-		$separado_por_comas_re = implode(",", $todas_respuestas);
-         
-		$this->render("cuestionario",array("preguntas_basa"=>$preguntas,"mode1"=>$evaluacion,"id"=>$id_evaluacion,"comas"=>$separado_por_comas,"comas2"=>$separado_por_comas_preg,"comas3"=>$separado_por_comas_re));
 	}	 
-		 
+	
+
 	/**
 	 * Funcion buscar las evaluaciones de una empresa
 	 * @return una lista de evaluaciones activas y cerradas
@@ -289,23 +329,7 @@ class EvaluacionController extends Controller
 	**/
 	public function actionProcesar_Cuestionario(){
 		
-		$id_evaluacion= $_POST['id_evaluacion'];
-		$respuestas = $_POST['preg_'];
-
-		foreach($_POST['preg_'] as $pNUM => $preg_){
-				 			 
-			$num_pregunta = explode("_",$pNUM);
-			$pregunta_id =  $num_pregunta[1];
-			$respuesta_id = $preg_;
-			$opcion_resp = Yii::app()->db->createCommand()->insert('resultado',array('id_pregunta'=>$pregunta_id,'id_respuesta'=>$respuesta_id,'id_evaluacion'=>$id_evaluacion));			 
-		}
-				 
-		$act_evaluacion = Yii::app()->db->createCommand()->update('evaluacion',array('estatus_evaluacion'=>'0'),'id_evaluacion='.$id_evaluacion);
-				 
-		$mode1='Felicidades ha sido Evaluado.';
-		$boton_resultado = '<a href="reporte_grafico?id_evaluacion='.$id_evaluacion.'">Mostrar Resultado</a> ';
 		
-		$this->render("procesar",array("mode1"=>$mode1,"id_evaluacion"=>$id_evaluacion,"boton"=>$boton_resultado));
 	}
 		
 	/**

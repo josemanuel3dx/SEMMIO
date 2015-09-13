@@ -16,6 +16,9 @@ class Evaluacion extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
+
+	public $cantPreg;
+	
 	public function tableName()
 	{
 		return 'evaluacion';
