@@ -13,12 +13,12 @@
 	);
 ?>
 
-<!--<script>
+<script>
 	$(document).ready(function(){
 	    $("select[name=empresa_evaluacion]").change(function(){
 		   id_matriz = $('select[name=empresa_evaluacion]').val();
 		   $.ajax({
-			        url: <?php /*echo "'".CController::createUrl('evaluacion/evaluar_mostrar')."'"; */?>,
+			        url: <?php echo "'".CController::createUrl('evaluacion/evaluar_mostrar')."'"; ?>,
 			       	type: "GET",
 			       	data: {'id_empresa' : $('select[name=empresa_evaluacion]').val()},
 			       	dataType: 'json',
@@ -31,7 +31,7 @@
 	        });
 	    });
 	});
-</script>-->
+</script>
 
 <?php $evaluacion=Evaluacion::model()->findByAttributes(array('id_evaluacion'=>$id)); ?>
 <?php $nombre_empresa=Empresa::model()->findByAttributes(array('id_empresa'=>$evaluacion->id_empresa)); ?>
@@ -39,7 +39,7 @@
 
 <div class="form">
 
-	<form action="cuestionario?id_evaluacion=<?php echo $id; ?>" method="post">
+	<form action="procesar_cuestionario" method="post">
 
 		<center><p><b>CUESTIONARIO</b></p></center>
 
@@ -59,42 +59,32 @@
 				<td>&nbsp;</td>
 			</tr>
 			<tr>
-				<td>
-					<?php 
-						//Imprimir Errores de Validacion
-						foreach(Yii::app()->user->getFlashes() as $key => $message) {
-					  		echo '<div class="flash-' . $key . '"><b>'.$key.'</b>: ' . $message . "</div>\n";
-					    }  
-					?>
-				</td>
-			</tr>
-			<tr>
 				<td>&nbsp;</td>
 			</tr>
 			<ol>
-				<?php //var_dump("<pre>".print_r($preguntas,TRUE)."</pre>"); ?>
-
-				<?php foreach($dataVista as $pregunta) { ?>
-
-					<tr>
-						<td> <?php echo '<li>'.$pregunta['descripcion_pregunta']; ?> <br /><br />
-				
-							<?php
-
-								foreach($pregunta['metricas'] as $value) {
-									echo '<input type="radio" name="PregForm['.$pregunta['id_pregunta'].']" value="'.$value['id_metrica'].'">'.$value['ponderacion'].') '.$value['nombre'].'<br />'; 
-									if($value['ponderacion'] == 0) 
-										echo '<br />';
-								}
-							?>
-					    </td>
-					</tr>
-
-				<?php } ?> 
+				<?php
+					asort($preguntas_basa); // added line
+					foreach($preguntas_basa as $preguntas_f){ ?>
+						<tr>
+							<td> <?php echo '<li>'.$preguntas_f['descripcion_pregunta']; ?> <br /><br />
+					
+								<?php $posibles_respuestas = Yii::app()->db->createCommand("SELECT a.id_pregunta id_pregunta, 
+									b.nombre_metrica nombre, b.valor ponderacion, b.id_metrica id_metrica
+									FROM opcion_respuesta a
+									LEFT JOIN metrica b on a.id_metrica = b.id_metrica
+									WHERE id_pregunta =".$preguntas_f['id_pregunta']." order by valor DESC")->queryAll();
+									
+									foreach($posibles_respuestas as $resp){
+									echo '<input type="radio" name="preg_[p_'.$preguntas_f['id_pregunta'].']" value="'.$resp['id_metrica'].'">'.$resp['ponderacion'].') '.$resp['nombre'].'<br />'; if($resp['ponderacion'] == 0) echo '<br />';
+									}
+								?>
+						    </td>
+						</tr>
+					<?php } ?>
 			</ol>
 
-			<tr><td><p><input type="submit" value="Continuar" /></p></td></tr>
-			<input type="hidden" name="controlForm" value="true">
+			<tr><td><p><input type="submit" /></p></td></tr>
+			<input type="hidden" id="id_evaluacion" name="id_evaluacion" value="<?php echo $id ?>">
 	 
 	 	</table>
 
