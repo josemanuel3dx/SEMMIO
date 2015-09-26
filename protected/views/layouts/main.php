@@ -67,7 +67,7 @@ if(Yii::app()->user->id==1){
 				
 				
 				array('label'=>'Ver Matriz', 'url'=>array('Matriz/ver'), 'visible'=>!Yii::app()->user->isGuest),
-				
+				array('label'=>'Ver Glosario', 'url'=>array('Glosario/ver'), 'visible'=>!Yii::app()->user->isGuest),
 
 				array('label'=>'Maestros', 'url'=>array(''),
 				
@@ -82,7 +82,7 @@ if(Yii::app()->user->id==1){
                                         array('label'=>'Caracteristica', 'url'=>array('/Caracteristica/index')),
                                         array('label'=>'Metrica', 'url'=>array('/metrica/index')),
 										array('label'=>'Cuestionario', 'url'=>array('/cuestionario/index')),
-                                    
+                                    	array('label'=>'Glosario', 'url'=>array('/glosario/index')),
                                         ),
 				
 				
