@@ -31,7 +31,7 @@ class Aspecto extends CActiveRecord
 			array('nombre_aspecto, definicion_aspecto, id_matriz, meta_aspecto', 'required'),
 			array('id_matriz', 'numerical', 'integerOnly'=>true),
 			array('nombre_aspecto', 'length', 'max'=>80),
-			array('meta_aspecto', 'length', 'max'=>150),
+			array('meta_aspecto', 'length', 'max'=>500),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id_aspecto, nombre_aspecto, definicion_aspecto, id_matriz, meta_aspecto', 'safe', 'on'=>'search'),

@@ -44,7 +44,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'meta_aspecto'); ?>
-		<?php echo $form->textField($model,'meta_aspecto',array('size'=>60,'maxlength'=>150)); ?>
+		<?php echo $form->textField($model,'meta_aspecto',array('size'=>60,'maxlength'=>500)); ?>
 		<?php echo $form->error($model,'meta_aspecto'); ?>
 	</div>
 
