@@ -19,7 +19,7 @@ Legal-Organizacional, Político-Social e Implementación. </li>
 </ul>
 
 <center>
-<img src="<?php echo Yii::app()->request->baseUrl; ?> /images/marco/dimensiones.png" alt="DimIO" height="42%" width="42%"> 
+<img src="<?php echo Yii::app()->request->baseUrl;?>/images/marco/dimensiones.png" alt="DimIO" height="42%" width="42%"> 
 <p> Interrelación entre las dimensiones temática, implantación y servicio</p>
 <p> <b>Fuente:</b> Poggi,Eduardo (2010)</p>
 </center>
