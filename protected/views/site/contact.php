@@ -3,7 +3,7 @@
 /* @var $model ContactForm */
 /* @var $form CActiveForm */
 
-$this->pageTitle=Yii::app()->name . ' - Contact Us';
+$this->pageTitle=Yii::app()->name . ' - Contáctenos';
 $this->breadcrumbs=array(
 	'Contacto',
 );
@@ -73,7 +73,7 @@ $this->breadcrumbs=array(
 	<?php endif; ?>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Submit'); ?>
+		<?php echo CHtml::submitButton('Enviar'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

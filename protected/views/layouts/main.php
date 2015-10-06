@@ -58,7 +58,7 @@ if(Yii::app()->user->id==1){
 				array('label'=>'Empresa', 'url'=>array(''),
 				
 				'items'=>array(
-                                        array('label'=>'Crear Evaluacion', 'url'=>array('/evaluacion/index'),'visible'=>Yii::app()->user->checkAccess('admin')),
+                                        array('label'=>'Crear Evaluación', 'url'=>array('/evaluacion/index'),'visible'=>Yii::app()->user->checkAccess('admin')),
                                         array('label'=>'Evaluar', 'url'=>array('/evaluacion/evaluar2'),'visible'=>!Yii::app()->user->isGuest),
                                         
                                         ),
@@ -79,8 +79,8 @@ if(Yii::app()->user->id==1){
                                         array('label'=>'Matriz', 'url'=>array('/Matriz/index')),
                                         array('label'=>'Nivel', 'url'=>array('/Nivel/index')),
                                         array('label'=>'Aspecto', 'url'=>array('/Aspecto/index')),
-                                        array('label'=>'Caracteristica', 'url'=>array('/Caracteristica/index')),
-                                        array('label'=>'Metrica', 'url'=>array('/metrica/index')),
+                                        array('label'=>'Característica', 'url'=>array('/Caracteristica/index')),
+                                        array('label'=>'Métrica', 'url'=>array('/metrica/index')),
 										array('label'=>'Cuestionario', 'url'=>array('/cuestionario/index')),
                                     	array('label'=>'Glosario', 'url'=>array('/glosario/index')),
                                         ),

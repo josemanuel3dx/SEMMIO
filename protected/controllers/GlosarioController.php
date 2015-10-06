@@ -197,7 +197,7 @@ class GlosarioController extends Controller
 			$div .= '<table class="normal" style="padding-left:40px"><tr> <th>Término</th><th>Definición</th>';
 	
 			$div .= '</tr>';
-	
+			asort($termino);
 			foreach($termino as $data2):
 				
 				$div .= '<tr><td style="background:beige;padding:10px">'.$data2->termino.'</td><td style="padding:10px;text-align:justify;">'.$data2->definicion.'</td></tr>';

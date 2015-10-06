@@ -3,15 +3,15 @@
 /* @var $model LoginForm */
 /* @var $form CActiveForm  */
 
-$this->pageTitle=Yii::app()->name . ' - Login';
+$this->pageTitle=Yii::app()->name . ' - Iniciar Sesión';
 $this->breadcrumbs=array(
-	'Login',
+	'Iniciar Sesión',
 );
 ?>
 
-<h1>Login</h1>
+<h1>Iniciar Sesión</h1>
 
-<p>Por favor complete el siguiente formulario con sus datos de acceso:</p>
+<p>Por favor complete el siguiente formulario con sus datos de acceso.</p>
 
 <div class="form">
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -46,7 +46,7 @@ $this->breadcrumbs=array(
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Login'); ?>
+		<?php echo CHtml::submitButton('Iniciar Sesión'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
