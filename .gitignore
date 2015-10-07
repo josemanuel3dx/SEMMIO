@@ -2,3 +2,5 @@
 protected/index.sublime-workspace
 *.log
 protected/runtime/application.log
+protected/runtime/application.log
+*.log

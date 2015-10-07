@@ -73,16 +73,16 @@ if(Yii::app()->user->id==1){
 				
 				
 				'items'=>array(
-                                        array('label'=>'Rol', 'url'=>array('/Rol/index')),
-                                        array('label'=>'Usuarios', 'url'=>array('/Usuario/index')),
-                                        array('label'=>'Empresa', 'url'=>array('/Empresa/index')),
-                                        array('label'=>'Matriz', 'url'=>array('/Matriz/index')),
-                                        array('label'=>'Nivel', 'url'=>array('/Nivel/index')),
                                         array('label'=>'Aspecto', 'url'=>array('/Aspecto/index')),
                                         array('label'=>'Característica', 'url'=>array('/Caracteristica/index')),
+                                        array('label'=>'Cuestionario', 'url'=>array('/cuestionario/index')),
+                                        array('label'=>'Empresa', 'url'=>array('/Empresa/index')),
+                                        array('label'=>'Glosario', 'url'=>array('/glosario/index')),
+                                        array('label'=>'Matriz', 'url'=>array('/Matriz/index')),
                                         array('label'=>'Métrica', 'url'=>array('/metrica/index')),
-										array('label'=>'Cuestionario', 'url'=>array('/cuestionario/index')),
-                                    	array('label'=>'Glosario', 'url'=>array('/glosario/index')),
+                                        array('label'=>'Nivel', 'url'=>array('/Nivel/index')),
+                                        array('label'=>'Rol', 'url'=>array('/Rol/index')),
+                                        array('label'=>'Usuarios', 'url'=>array('/Usuario/index')),                     
                                         ),
 				
 				
