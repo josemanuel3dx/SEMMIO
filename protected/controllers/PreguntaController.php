@@ -28,7 +28,7 @@ class PreguntaController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view', 'mostrar'),
 				#'users'=>array('*'),
 				'roles'=>array('admin'),
 			),
@@ -67,13 +67,14 @@ class PreguntaController extends Controller
 	{
 		$model=new Pregunta;
 		$b = new Metrica;
-	
+		
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Pregunta'] , $_POST['Metrica']))
 		{
-				
+			/*var_dump("<pre>".print_r($_POST['Pregunta'],TRUE)."</pre>");
+			exit();	*/
 			$model->attributes=$_POST['Pregunta'];
 			$b->attributes=$_POST['Metrica'];
 			
@@ -100,6 +101,13 @@ class PreguntaController extends Controller
 				}
 				$this->redirect(array('view','id'=>$model->id_pregunta));
 		}
+
+		/*else
+		{
+			var_dump("<pre>".print_r($model,TRUE)."</pre>");
+			exit();
+		}*/
+
 		$this->render('create',array(
 			'model'=>$model,
 			'b'=>$b,
@@ -211,4 +219,34 @@ class PreguntaController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+	public function actionMostrar(){
+
+		$resultado = $_GET['id_aspecto'];
+		$aspecto = Aspecto::model()->findByPk($resultado);
+		$caracteristica = Caracteristica::model()->findAllByAttributes(array('id_aspecto'=>$aspecto->id_aspecto));
+		
+		if(count($caracteristica)!=0){
+			$div = '<label for="Pregunta_id_aspecto" class="required">
+						Característica 
+						<span class="required">*</span>
+					</label>';
+			$div .= '<select multiple>';
+
+			foreach($caracteristica as $data):
+				$div .=' <option value="'.$data->id_caracteristica.'">'.$data->nombre_caracteristica.'</option>'; 
+			endforeach;
+
+			$div .= '</select>';
+
+		}else{
+
+			$div='<br /><br /><center><p><b>**Aspecto sin Caracteristicas**</b></p></center>';
+		}
+	
+		$return['message'] = $div;
+		echo json_encode($return);
+	}
+
+
 }
