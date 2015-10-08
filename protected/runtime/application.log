@@ -9307,3 +9307,1109 @@ REQUEST_URI=/index.php/evaluacion/cuestionario?id_evaluacion=1
 in /Users/josefernandez/Documents/Proyectos/SEMMIO/mmio/protected/views/evaluacion/cuestionario.php (63)
 in /Users/josefernandez/Documents/Proyectos/SEMMIO/mmio/protected/controllers/EvaluacionController.php (252)
 in /Users/josefernandez/Documents/Proyectos/SEMMIO/mmio/index.php (13)
+2015/10/05 16:35:12 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in H:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 H:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#8 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/view')
+#9 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/SEMMIO/index.php/usuario/4
+HTTP_REFERER=http://localhost/SEMMIO/index.php/usuario/update/4
+---
+2015/10/07 00:18:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in H:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/mar...')
+#3 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SEMMIO/index.php/site/images/marco/dimensiones.png
+HTTP_REFERER=http://localhost/SEMMIO/index.php/site/index
+---
+2015/10/07 00:20:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in H:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/mar...')
+#3 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SEMMIO/index.php/site/images/marco/dimensiones.png
+HTTP_REFERER=http://localhost/SEMMIO/index.php/site/index
+---
+2015/10/07 00:20:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in H:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/mar...')
+#3 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SEMMIO/index.php/site/images/marco/dimensiones.png
+HTTP_REFERER=http://localhost/SEMMIO/index.php/site/index
+---
+2015/10/07 00:21:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in H:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/mar...')
+#3 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SEMMIO/index.php/site/images/marco/dimensiones.png
+HTTP_REFERER=http://localhost/SEMMIO/index.php/site/index
+---
+2015/10/07 00:21:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in H:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/mar...')
+#3 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SEMMIO/index.php/site/images/marco/dimensiones.png
+HTTP_REFERER=http://localhost/SEMMIO/index.php/site/index
+---
+2015/10/07 00:21:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in H:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/mar...')
+#3 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SEMMIO/index.php/site/images/marco/dimensiones.png
+HTTP_REFERER=http://localhost/SEMMIO/index.php/site/index
+---
+2015/10/07 00:21:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in H:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/mar...')
+#3 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SEMMIO/index.php/site/images/marco/dimensiones.png
+HTTP_REFERER=http://localhost/SEMMIO/index.php/site/index
+---
+2015/10/07 00:21:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in H:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/mar...')
+#3 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SEMMIO/index.php/site/images/marco/dimensiones.png
+HTTP_REFERER=http://localhost/SEMMIO/index.php/site/index
+---
+2015/10/07 00:21:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in H:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/mar...')
+#3 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SEMMIO/index.php/site/images/marco/dimensiones.png
+HTTP_REFERER=http://localhost/SEMMIO/index.php/site/index
+---
+2015/10/07 00:22:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in H:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/mar...')
+#3 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SEMMIO/index.php/site/images/marco/dimensiones.png
+HTTP_REFERER=http://localhost/SEMMIO/index.php/site/index
+---
+2015/10/07 00:22:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in H:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/mar...')
+#3 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SEMMIO/index.php/site/images/marco/dimensiones.png
+HTTP_REFERER=http://localhost/SEMMIO/index.php/site/index
+---
+2015/10/07 00:22:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in H:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/mar...')
+#3 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SEMMIO/index.php/site/images/marco/dimensiones.png
+HTTP_REFERER=http://localhost/SEMMIO/index.php/site/index
+---
+2015/10/07 00:28:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "SEMMIO/index.php"' in H:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('SEMMIO/index.ph...')
+#1 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SEMMIO/index.php/SEMMIO/index.php
+HTTP_REFERER=http://localhost/SEMMIO/index.php
+---
+2015/10/07 00:28:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "SEMMIO/index.php"' in H:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('SEMMIO/index.ph...')
+#1 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SEMMIO/index.php/SEMMIO/index.php
+HTTP_REFERER=http://localhost/SEMMIO/index.php/SEMMIO/index.php
+---
+2015/10/07 00:28:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "SEMMIO/index.php"' in H:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('SEMMIO/index.ph...')
+#1 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SEMMIO/index.php/SEMMIO/index.php
+HTTP_REFERER=http://localhost/SEMMIO/index.php/SEMMIO/index.php
+---
+2015/10/07 00:28:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in H:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/mar...')
+#3 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SEMMIO/index.php/site/images/marco/dimensiones.png
+HTTP_REFERER=http://localhost/SEMMIO/index.php/site/index
+---
+2015/10/07 00:29:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "localhost/SEMMIO/index.php"' in H:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('localhost/SEMMI...')
+#1 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SEMMIO/index.php/localhost/SEMMIO/index.php
+HTTP_REFERER=http://localhost/SEMMIO/index.php
+---
+2015/10/07 00:29:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "localhost/SEMMIO/index.php"' in H:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('localhost/SEMMI...')
+#1 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/SEMMIO/index.php/localhost/SEMMIO/index.php
+HTTP_REFERER=http://localhost/SEMMIO/index.php
+---
+2015/10/07 00:29:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in H:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/mar...')
+#3 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SEMMIO/index.php/site/images/marco/dimensiones.png
+HTTP_REFERER=http://localhost/SEMMIO/index.php/site/index
+---
+2015/10/07 00:29:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in H:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/mar...')
+#3 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SEMMIO/index.php/site/images/marco/dimensiones.png
+HTTP_REFERER=http://localhost/SEMMIO/index.php/site/index
+---
+2015/10/07 00:29:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in H:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/mar...')
+#3 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SEMMIO/index.php/site/images/marco/dimensiones.png
+HTTP_REFERER=http://localhost/SEMMIO/index.php/site/index
+---
+2015/10/07 00:30:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in H:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/mar...')
+#3 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SEMMIO/index.php/site/images/marco/dimensiones.png
+HTTP_REFERER=http://localhost/SEMMIO/index.php/site/index
+---
+2015/10/07 00:30:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in H:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/mar...')
+#3 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SEMMIO/index.php/site/images/marco/dimensiones.png
+HTTP_REFERER=http://localhost/SEMMIO/index.php/site/
+---
+2015/10/07 00:30:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in H:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/mar...')
+#3 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SEMMIO/index.php/site/images/marco/dimensiones.png
+HTTP_REFERER=http://localhost/SEMMIO/index.php/site/index
+---
+2015/10/07 00:31:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in H:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/mar...')
+#3 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SEMMIO/index.php/site/images/marco/dimensiones.png
+HTTP_REFERER=http://localhost/SEMMIO/index.php/site/index
+---
+2015/10/07 00:32:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "images" solicitada.' in H:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('images')
+#1 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('images')
+#2 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/mar...')
+#3 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/SEMMIO/index.php/site/images/marco/dimensiones.png
+HTTP_REFERER=http://localhost/SEMMIO/index.php/site/index
+---
+2015/10/07 05:15:54 [error] [php] Undefined variable: preguntas (H:\xampp\htdocs\SEMMIO\protected\views\pregunta\_form.php:9)
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(869): PreguntaController->renderFile()
+#1 H:\xampp\htdocs\SEMMIO\protected\views\pregunta\create.php(19): PreguntaController->renderPartial()
+#2 H:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#3 H:\xampp\htdocs\yii\framework\web\CBaseController.php(95): PreguntaController->renderInternal()
+#4 H:\xampp\htdocs\yii\framework\web\CController.php(869): PreguntaController->renderFile()
+#5 H:\xampp\htdocs\yii\framework\web\CController.php(782): PreguntaController->renderPartial()
+#6 H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php(106): PreguntaController->render()
+#7 H:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): PreguntaController->actionCreate()
+#8 H:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PreguntaController->runAction()
+#10 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): PreguntaController->filterAccessControl()
+#13 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 H:\xampp\htdocs\yii\framework\web\CController.php(265): PreguntaController->runActionWithFilters()
+#16 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PreguntaController->run()
+#17 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 H:\xampp\htdocs\SEMMIO\index.php(13): CWebApplication->run()
+REQUEST_URI=/SEMMIO/index.php/pregunta/create
+in H:\xampp\htdocs\SEMMIO\protected\views\pregunta\_form.php (9)
+in H:\xampp\htdocs\SEMMIO\protected\views\pregunta\create.php (19)
+in H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php (106)
+2015/10/07 05:17:03 [error] [php] Undefined variable: preguntas (H:\xampp\htdocs\SEMMIO\protected\views\pregunta\_form.php:9)
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(869): PreguntaController->renderFile()
+#1 H:\xampp\htdocs\SEMMIO\protected\views\pregunta\create.php(19): PreguntaController->renderPartial()
+#2 H:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#3 H:\xampp\htdocs\yii\framework\web\CBaseController.php(95): PreguntaController->renderInternal()
+#4 H:\xampp\htdocs\yii\framework\web\CController.php(869): PreguntaController->renderFile()
+#5 H:\xampp\htdocs\yii\framework\web\CController.php(782): PreguntaController->renderPartial()
+#6 H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php(106): PreguntaController->render()
+#7 H:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): PreguntaController->actionCreate()
+#8 H:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PreguntaController->runAction()
+#10 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): PreguntaController->filterAccessControl()
+#13 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 H:\xampp\htdocs\yii\framework\web\CController.php(265): PreguntaController->runActionWithFilters()
+#16 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PreguntaController->run()
+#17 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 H:\xampp\htdocs\SEMMIO\index.php(13): CWebApplication->run()
+REQUEST_URI=/SEMMIO/index.php/pregunta/create
+in H:\xampp\htdocs\SEMMIO\protected\views\pregunta\_form.php (9)
+in H:\xampp\htdocs\SEMMIO\protected\views\pregunta\create.php (19)
+in H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php (106)
+2015/10/07 05:21:23 [error] [php] Undefined variable: preguntas (H:\xampp\htdocs\SEMMIO\protected\views\pregunta\_form.php:9)
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(869): PreguntaController->renderFile()
+#1 H:\xampp\htdocs\SEMMIO\protected\views\pregunta\create.php(19): PreguntaController->renderPartial()
+#2 H:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#3 H:\xampp\htdocs\yii\framework\web\CBaseController.php(95): PreguntaController->renderInternal()
+#4 H:\xampp\htdocs\yii\framework\web\CController.php(869): PreguntaController->renderFile()
+#5 H:\xampp\htdocs\yii\framework\web\CController.php(782): PreguntaController->renderPartial()
+#6 H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php(106): PreguntaController->render()
+#7 H:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): PreguntaController->actionCreate()
+#8 H:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PreguntaController->runAction()
+#10 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): PreguntaController->filterAccessControl()
+#13 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 H:\xampp\htdocs\yii\framework\web\CController.php(265): PreguntaController->runActionWithFilters()
+#16 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PreguntaController->run()
+#17 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 H:\xampp\htdocs\SEMMIO\index.php(13): CWebApplication->run()
+REQUEST_URI=/SEMMIO/index.php/pregunta/create
+in H:\xampp\htdocs\SEMMIO\protected\views\pregunta\_form.php (9)
+in H:\xampp\htdocs\SEMMIO\protected\views\pregunta\create.php (19)
+in H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php (106)
+2015/10/07 05:22:24 [error] [php] Undefined variable: preguntas (H:\xampp\htdocs\SEMMIO\protected\views\pregunta\_form.php:9)
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(869): PreguntaController->renderFile()
+#1 H:\xampp\htdocs\SEMMIO\protected\views\pregunta\create.php(19): PreguntaController->renderPartial()
+#2 H:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#3 H:\xampp\htdocs\yii\framework\web\CBaseController.php(95): PreguntaController->renderInternal()
+#4 H:\xampp\htdocs\yii\framework\web\CController.php(869): PreguntaController->renderFile()
+#5 H:\xampp\htdocs\yii\framework\web\CController.php(782): PreguntaController->renderPartial()
+#6 H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php(106): PreguntaController->render()
+#7 H:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): PreguntaController->actionCreate()
+#8 H:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PreguntaController->runAction()
+#10 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): PreguntaController->filterAccessControl()
+#13 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 H:\xampp\htdocs\yii\framework\web\CController.php(265): PreguntaController->runActionWithFilters()
+#16 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PreguntaController->run()
+#17 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 H:\xampp\htdocs\SEMMIO\index.php(13): CWebApplication->run()
+REQUEST_URI=/SEMMIO/index.php/pregunta/create
+in H:\xampp\htdocs\SEMMIO\protected\views\pregunta\_form.php (9)
+in H:\xampp\htdocs\SEMMIO\protected\views\pregunta\create.php (19)
+in H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php (106)
+2015/10/07 06:14:44 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in H:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 H:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('mostrar')
+#8 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pregunta/mostra...')
+#9 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/SEMMIO/index.php/pregunta/mostrar?id_matriz=1
+HTTP_REFERER=http://localhost/SEMMIO/index.php/pregunta/create
+---
+2015/10/07 06:14:48 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in H:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 H:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('mostrar')
+#8 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pregunta/mostra...')
+#9 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/SEMMIO/index.php/pregunta/mostrar?id_matriz=1
+HTTP_REFERER=http://localhost/SEMMIO/index.php/pregunta/create
+---
+2015/10/07 06:14:52 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in H:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 H:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('mostrar')
+#8 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pregunta/mostra...')
+#9 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/SEMMIO/index.php/pregunta/mostrar?id_matriz=2
+HTTP_REFERER=http://localhost/SEMMIO/index.php/pregunta/create
+---
+2015/10/07 06:15:00 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in H:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 H:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('mostrar')
+#8 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pregunta/mostra...')
+#9 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/SEMMIO/index.php/pregunta/mostrar?id_matriz=3
+HTTP_REFERER=http://localhost/SEMMIO/index.php/pregunta/create
+---
+2015/10/07 06:15:21 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in H:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 H:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('mostrar')
+#8 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pregunta/mostra...')
+#9 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/SEMMIO/index.php/pregunta/mostrar?id_matriz=1
+HTTP_REFERER=http://localhost/SEMMIO/index.php/pregunta/create
+---
+2015/10/07 06:17:25 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in H:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 H:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('mostrar')
+#8 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pregunta/mostra...')
+#9 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/SEMMIO/index.php/pregunta/mostrar?id_aspecto=1
+HTTP_REFERER=http://localhost/SEMMIO/index.php/pregunta/create
+---
+2015/10/07 06:19:05 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in H:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 H:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('mostrar')
+#8 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pregunta/mostra...')
+#9 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/SEMMIO/index.php/pregunta/mostrar?id_aspecto=1
+HTTP_REFERER=http://localhost/SEMMIO/index.php/pregunta/create
+---
+2015/10/07 06:19:12 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in H:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 H:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('mostrar')
+#8 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pregunta/mostra...')
+#9 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/SEMMIO/index.php/pregunta/mostrar?id_aspecto=2
+HTTP_REFERER=http://localhost/SEMMIO/index.php/pregunta/create
+---
+2015/10/07 06:22:18 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in H:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 H:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('mostrar')
+#8 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pregunta/mostra...')
+#9 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/SEMMIO/index.php/pregunta/mostrar?id_aspecto=1
+HTTP_REFERER=http://localhost/SEMMIO/index.php/pregunta/create
+---
+2015/10/07 06:22:23 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in H:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 H:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('mostrar')
+#8 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pregunta/mostra...')
+#9 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/SEMMIO/index.php/pregunta/mostrar?id_aspecto=2
+HTTP_REFERER=http://localhost/SEMMIO/index.php/pregunta/create
+---
+2015/10/07 06:24:50 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in H:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 H:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('mostrar')
+#8 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pregunta/mostra...')
+#9 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/SEMMIO/index.php/pregunta/mostrar?id_aspecto=1
+HTTP_REFERER=http://localhost/SEMMIO/index.php/pregunta/create
+---
+2015/10/07 06:25:00 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in H:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 H:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('mostrar')
+#8 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pregunta/mostra...')
+#9 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/SEMMIO/index.php/pregunta/mostrar?id_aspecto=2
+HTTP_REFERER=http://localhost/SEMMIO/index.php/pregunta/create
+---
+2015/10/07 06:27:10 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in H:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 H:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('mostrar')
+#8 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pregunta/mostra...')
+#9 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/SEMMIO/index.php/pregunta/mostrar?id_aspecto=1
+HTTP_REFERER=http://localhost/SEMMIO/index.php/pregunta/create
+---
+2015/10/07 06:28:27 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in H:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 H:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('mostrar')
+#8 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('pregunta/mostra...')
+#9 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 H:\xampp\htdocs\SEMMIO\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/SEMMIO/index.php/pregunta/mostrar?id_aspecto=1
+HTTP_REFERER=http://localhost/SEMMIO/index.php/pregunta/create
+---
+2015/10/07 06:36:37 [error] [php] Undefined variable: matriz (H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php:236)
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PreguntaController->runAction()
+#1 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): PreguntaController->filterAccessControl()
+#4 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 H:\xampp\htdocs\yii\framework\web\CController.php(265): PreguntaController->runActionWithFilters()
+#7 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PreguntaController->run()
+#8 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 H:\xampp\htdocs\SEMMIO\index.php(13): CWebApplication->run()
+REQUEST_URI=/SEMMIO/index.php/pregunta/mostrar?id_aspecto=1
+in H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php (236)
+in H:\xampp\htdocs\SEMMIO\index.php (13)
+2015/10/07 06:37:24 [error] [php] Undefined variable: matriz (H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php:236)
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PreguntaController->runAction()
+#1 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): PreguntaController->filterAccessControl()
+#4 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 H:\xampp\htdocs\yii\framework\web\CController.php(265): PreguntaController->runActionWithFilters()
+#7 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PreguntaController->run()
+#8 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 H:\xampp\htdocs\SEMMIO\index.php(13): CWebApplication->run()
+REQUEST_URI=/SEMMIO/index.php/pregunta/mostrar?id_aspecto=1
+in H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php (236)
+in H:\xampp\htdocs\SEMMIO\index.php (13)
+2015/10/07 06:38:41 [error] [php] Undefined variable: div (H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php:240)
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PreguntaController->runAction()
+#1 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): PreguntaController->filterAccessControl()
+#4 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 H:\xampp\htdocs\yii\framework\web\CController.php(265): PreguntaController->runActionWithFilters()
+#7 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PreguntaController->run()
+#8 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 H:\xampp\htdocs\SEMMIO\index.php(13): CWebApplication->run()
+REQUEST_URI=/SEMMIO/index.php/pregunta/mostrar?id_aspecto=1
+in H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php (240)
+in H:\xampp\htdocs\SEMMIO\index.php (13)
+2015/10/07 19:43:12 [error] [php] implode(): Invalid arguments passed (H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php:82)
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PreguntaController->runAction()
+#2 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): PreguntaController->filterAccessControl()
+#5 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 H:\xampp\htdocs\yii\framework\web\CController.php(265): PreguntaController->runActionWithFilters()
+#8 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PreguntaController->run()
+#9 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 H:\xampp\htdocs\SEMMIO\index.php(13): CWebApplication->run()
+REQUEST_URI=/SEMMIO/index.php/pregunta/create
+in H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php (82)
+in H:\xampp\htdocs\SEMMIO\index.php (13)
+2015/10/07 19:44:11 [error] [php] implode(): Invalid arguments passed (H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php:82)
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PreguntaController->runAction()
+#2 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): PreguntaController->filterAccessControl()
+#5 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 H:\xampp\htdocs\yii\framework\web\CController.php(265): PreguntaController->runActionWithFilters()
+#8 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PreguntaController->run()
+#9 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 H:\xampp\htdocs\SEMMIO\index.php(13): CWebApplication->run()
+REQUEST_URI=/SEMMIO/index.php/pregunta/create
+in H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php (82)
+in H:\xampp\htdocs\SEMMIO\index.php (13)
+2015/10/07 19:49:14 [error] [php] Undefined index: Pregunta (H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php:70)
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PreguntaController->runAction()
+#1 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): PreguntaController->filterAccessControl()
+#4 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 H:\xampp\htdocs\yii\framework\web\CController.php(265): PreguntaController->runActionWithFilters()
+#7 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PreguntaController->run()
+#8 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 H:\xampp\htdocs\SEMMIO\index.php(13): CWebApplication->run()
+REQUEST_URI=/SEMMIO/index.php/pregunta/create
+in H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php (70)
+in H:\xampp\htdocs\SEMMIO\index.php (13)
+2015/10/07 19:56:38 [error] [php] implode(): Invalid arguments passed (H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php:83)
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PreguntaController->runAction()
+#2 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): PreguntaController->filterAccessControl()
+#5 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 H:\xampp\htdocs\yii\framework\web\CController.php(265): PreguntaController->runActionWithFilters()
+#8 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PreguntaController->run()
+#9 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 H:\xampp\htdocs\SEMMIO\index.php(13): CWebApplication->run()
+REQUEST_URI=/SEMMIO/index.php/pregunta/create
+in H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php (83)
+in H:\xampp\htdocs\SEMMIO\index.php (13)
+2015/10/07 20:19:46 [error] [php] implode(): Invalid arguments passed (H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php:82)
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PreguntaController->runAction()
+#2 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): PreguntaController->filterAccessControl()
+#5 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 H:\xampp\htdocs\yii\framework\web\CController.php(265): PreguntaController->runActionWithFilters()
+#8 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PreguntaController->run()
+#9 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 H:\xampp\htdocs\SEMMIO\index.php(13): CWebApplication->run()
+REQUEST_URI=/SEMMIO/index.php/pregunta/create
+in H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php (82)
+in H:\xampp\htdocs\SEMMIO\index.php (13)
+2015/10/07 20:19:47 [error] [php] implode(): Invalid arguments passed (H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php:82)
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PreguntaController->runAction()
+#2 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): PreguntaController->filterAccessControl()
+#5 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 H:\xampp\htdocs\yii\framework\web\CController.php(265): PreguntaController->runActionWithFilters()
+#8 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PreguntaController->run()
+#9 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 H:\xampp\htdocs\SEMMIO\index.php(13): CWebApplication->run()
+REQUEST_URI=/SEMMIO/index.php/pregunta/create
+in H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php (82)
+in H:\xampp\htdocs\SEMMIO\index.php (13)
+2015/10/07 20:20:26 [error] [php] implode(): Invalid arguments passed (H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php:82)
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PreguntaController->runAction()
+#2 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): PreguntaController->filterAccessControl()
+#5 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 H:\xampp\htdocs\yii\framework\web\CController.php(265): PreguntaController->runActionWithFilters()
+#8 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PreguntaController->run()
+#9 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 H:\xampp\htdocs\SEMMIO\index.php(13): CWebApplication->run()
+REQUEST_URI=/SEMMIO/index.php/pregunta/create
+in H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php (82)
+in H:\xampp\htdocs\SEMMIO\index.php (13)
+2015/10/07 20:20:28 [error] [php] implode(): Invalid arguments passed (H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php:82)
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PreguntaController->runAction()
+#2 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): PreguntaController->filterAccessControl()
+#5 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 H:\xampp\htdocs\yii\framework\web\CController.php(265): PreguntaController->runActionWithFilters()
+#8 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PreguntaController->run()
+#9 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 H:\xampp\htdocs\SEMMIO\index.php(13): CWebApplication->run()
+REQUEST_URI=/SEMMIO/index.php/pregunta/create
+in H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php (82)
+in H:\xampp\htdocs\SEMMIO\index.php (13)
+2015/10/07 20:31:00 [error] [php] implode(): Invalid arguments passed (H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php:83)
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PreguntaController->runAction()
+#2 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): PreguntaController->filterAccessControl()
+#5 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 H:\xampp\htdocs\yii\framework\web\CController.php(265): PreguntaController->runActionWithFilters()
+#8 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PreguntaController->run()
+#9 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 H:\xampp\htdocs\SEMMIO\index.php(13): CWebApplication->run()
+REQUEST_URI=/SEMMIO/index.php/pregunta/create
+in H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php (83)
+in H:\xampp\htdocs\SEMMIO\index.php (13)
+2015/10/07 20:31:42 [error] [php] implode(): Invalid arguments passed (H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php:83)
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PreguntaController->runAction()
+#2 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): PreguntaController->filterAccessControl()
+#5 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 H:\xampp\htdocs\yii\framework\web\CController.php(265): PreguntaController->runActionWithFilters()
+#8 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PreguntaController->run()
+#9 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 H:\xampp\htdocs\SEMMIO\index.php(13): CWebApplication->run()
+REQUEST_URI=/SEMMIO/index.php/pregunta/create
+in H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php (83)
+in H:\xampp\htdocs\SEMMIO\index.php (13)
+2015/10/08 06:01:55 [error] [php] Trying to get property of non-object (H:\xampp\htdocs\SEMMIO\protected\views\cuestionario\index.php:9)
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(869): CuestionarioController->renderFile()
+#1 H:\xampp\htdocs\yii\framework\web\CController.php(782): CuestionarioController->renderPartial()
+#2 H:\xampp\htdocs\SEMMIO\protected\controllers\CuestionarioController.php(82): CuestionarioController->render()
+#3 H:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CuestionarioController->actionIndex()
+#4 H:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CuestionarioController->runAction()
+#6 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CuestionarioController->filterAccessControl()
+#9 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 H:\xampp\htdocs\yii\framework\web\CController.php(265): CuestionarioController->runActionWithFilters()
+#12 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CuestionarioController->run()
+#13 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 H:\xampp\htdocs\SEMMIO\index.php(13): CWebApplication->run()
+REQUEST_URI=/SEMMIO/index.php/cuestionario/index
+in H:\xampp\htdocs\SEMMIO\protected\views\cuestionario\index.php (9)
+in H:\xampp\htdocs\SEMMIO\protected\controllers\CuestionarioController.php (82)
+in H:\xampp\htdocs\SEMMIO\index.php (13)
+2015/10/08 06:02:34 [error] [php] Trying to get property of non-object (H:\xampp\htdocs\SEMMIO\protected\views\cuestionario\index.php:9)
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(869): CuestionarioController->renderFile()
+#1 H:\xampp\htdocs\yii\framework\web\CController.php(782): CuestionarioController->renderPartial()
+#2 H:\xampp\htdocs\SEMMIO\protected\controllers\CuestionarioController.php(82): CuestionarioController->render()
+#3 H:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CuestionarioController->actionIndex()
+#4 H:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CuestionarioController->runAction()
+#6 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CuestionarioController->filterAccessControl()
+#9 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 H:\xampp\htdocs\yii\framework\web\CController.php(265): CuestionarioController->runActionWithFilters()
+#12 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CuestionarioController->run()
+#13 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 H:\xampp\htdocs\SEMMIO\index.php(13): CWebApplication->run()
+REQUEST_URI=/SEMMIO/index.php/cuestionario/index
+in H:\xampp\htdocs\SEMMIO\protected\views\cuestionario\index.php (9)
+in H:\xampp\htdocs\SEMMIO\protected\controllers\CuestionarioController.php (82)
+in H:\xampp\htdocs\SEMMIO\index.php (13)
+2015/10/08 06:04:40 [error] [php] Trying to get property of non-object (H:\xampp\htdocs\SEMMIO\protected\views\cuestionario\index.php:9)
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(869): CuestionarioController->renderFile()
+#1 H:\xampp\htdocs\yii\framework\web\CController.php(782): CuestionarioController->renderPartial()
+#2 H:\xampp\htdocs\SEMMIO\protected\controllers\CuestionarioController.php(82): CuestionarioController->render()
+#3 H:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CuestionarioController->actionIndex()
+#4 H:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CuestionarioController->runAction()
+#6 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CuestionarioController->filterAccessControl()
+#9 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 H:\xampp\htdocs\yii\framework\web\CController.php(265): CuestionarioController->runActionWithFilters()
+#12 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CuestionarioController->run()
+#13 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 H:\xampp\htdocs\SEMMIO\index.php(13): CWebApplication->run()
+REQUEST_URI=/SEMMIO/index.php/cuestionario/index
+in H:\xampp\htdocs\SEMMIO\protected\views\cuestionario\index.php (9)
+in H:\xampp\htdocs\SEMMIO\protected\controllers\CuestionarioController.php (82)
+in H:\xampp\htdocs\SEMMIO\index.php (13)
+2015/10/08 06:09:03 [error] [php] Trying to get property of non-object (H:\xampp\htdocs\SEMMIO\protected\views\cuestionario\index.php:9)
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(869): CuestionarioController->renderFile()
+#1 H:\xampp\htdocs\yii\framework\web\CController.php(782): CuestionarioController->renderPartial()
+#2 H:\xampp\htdocs\SEMMIO\protected\controllers\CuestionarioController.php(82): CuestionarioController->render()
+#3 H:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CuestionarioController->actionIndex()
+#4 H:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CuestionarioController->runAction()
+#6 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CuestionarioController->filterAccessControl()
+#9 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 H:\xampp\htdocs\yii\framework\web\CController.php(265): CuestionarioController->runActionWithFilters()
+#12 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CuestionarioController->run()
+#13 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 H:\xampp\htdocs\SEMMIO\index.php(13): CWebApplication->run()
+REQUEST_URI=/SEMMIO/index.php/cuestionario/index
+in H:\xampp\htdocs\SEMMIO\protected\views\cuestionario\index.php (9)
+in H:\xampp\htdocs\SEMMIO\protected\controllers\CuestionarioController.php (82)
+in H:\xampp\htdocs\SEMMIO\index.php (13)
+2015/10/08 06:09:25 [error] [php] Trying to get property of non-object (H:\xampp\htdocs\SEMMIO\protected\views\cuestionario\index.php:9)
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(869): CuestionarioController->renderFile()
+#1 H:\xampp\htdocs\yii\framework\web\CController.php(782): CuestionarioController->renderPartial()
+#2 H:\xampp\htdocs\SEMMIO\protected\controllers\CuestionarioController.php(82): CuestionarioController->render()
+#3 H:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CuestionarioController->actionIndex()
+#4 H:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CuestionarioController->runAction()
+#6 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CuestionarioController->filterAccessControl()
+#9 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 H:\xampp\htdocs\yii\framework\web\CController.php(265): CuestionarioController->runActionWithFilters()
+#12 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CuestionarioController->run()
+#13 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 H:\xampp\htdocs\SEMMIO\index.php(13): CWebApplication->run()
+REQUEST_URI=/SEMMIO/index.php/cuestionario/index
+in H:\xampp\htdocs\SEMMIO\protected\views\cuestionario\index.php (9)
+in H:\xampp\htdocs\SEMMIO\protected\controllers\CuestionarioController.php (82)
+in H:\xampp\htdocs\SEMMIO\index.php (13)
+2015/10/08 06:10:03 [error] [php] Trying to get property of non-object (H:\xampp\htdocs\SEMMIO\protected\views\cuestionario\index.php:12)
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(869): CuestionarioController->renderFile()
+#1 H:\xampp\htdocs\yii\framework\web\CController.php(782): CuestionarioController->renderPartial()
+#2 H:\xampp\htdocs\SEMMIO\protected\controllers\CuestionarioController.php(82): CuestionarioController->render()
+#3 H:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CuestionarioController->actionIndex()
+#4 H:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CuestionarioController->runAction()
+#6 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CuestionarioController->filterAccessControl()
+#9 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 H:\xampp\htdocs\yii\framework\web\CController.php(265): CuestionarioController->runActionWithFilters()
+#12 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CuestionarioController->run()
+#13 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 H:\xampp\htdocs\SEMMIO\index.php(13): CWebApplication->run()
+REQUEST_URI=/SEMMIO/index.php/cuestionario/index
+in H:\xampp\htdocs\SEMMIO\protected\views\cuestionario\index.php (12)
+in H:\xampp\htdocs\SEMMIO\protected\controllers\CuestionarioController.php (82)
+in H:\xampp\htdocs\SEMMIO\index.php (13)
+2015/10/08 06:10:22 [error] [php] Trying to get property of non-object (H:\xampp\htdocs\SEMMIO\protected\views\cuestionario\index.php:12)
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(869): CuestionarioController->renderFile()
+#1 H:\xampp\htdocs\yii\framework\web\CController.php(782): CuestionarioController->renderPartial()
+#2 H:\xampp\htdocs\SEMMIO\protected\controllers\CuestionarioController.php(82): CuestionarioController->render()
+#3 H:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CuestionarioController->actionIndex()
+#4 H:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CuestionarioController->runAction()
+#6 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CuestionarioController->filterAccessControl()
+#9 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 H:\xampp\htdocs\yii\framework\web\CController.php(265): CuestionarioController->runActionWithFilters()
+#12 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CuestionarioController->run()
+#13 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 H:\xampp\htdocs\SEMMIO\index.php(13): CWebApplication->run()
+REQUEST_URI=/SEMMIO/index.php/cuestionario/index
+in H:\xampp\htdocs\SEMMIO\protected\views\cuestionario\index.php (12)
+in H:\xampp\htdocs\SEMMIO\protected\controllers\CuestionarioController.php (82)
+in H:\xampp\htdocs\SEMMIO\index.php (13)
+2015/10/08 06:12:16 [error] [php] Trying to get property of non-object (H:\xampp\htdocs\SEMMIO\protected\views\cuestionario\index.php:9)
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(869): CuestionarioController->renderFile()
+#1 H:\xampp\htdocs\yii\framework\web\CController.php(782): CuestionarioController->renderPartial()
+#2 H:\xampp\htdocs\SEMMIO\protected\controllers\CuestionarioController.php(82): CuestionarioController->render()
+#3 H:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CuestionarioController->actionIndex()
+#4 H:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CuestionarioController->runAction()
+#6 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CuestionarioController->filterAccessControl()
+#9 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 H:\xampp\htdocs\yii\framework\web\CController.php(265): CuestionarioController->runActionWithFilters()
+#12 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CuestionarioController->run()
+#13 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 H:\xampp\htdocs\SEMMIO\index.php(13): CWebApplication->run()
+REQUEST_URI=/SEMMIO/index.php/cuestionario/index
+in H:\xampp\htdocs\SEMMIO\protected\views\cuestionario\index.php (9)
+in H:\xampp\htdocs\SEMMIO\protected\controllers\CuestionarioController.php (82)
+in H:\xampp\htdocs\SEMMIO\index.php (13)
+2015/10/08 06:14:30 [error] [php] Undefined variable: modes1 (H:\xampp\htdocs\SEMMIO\protected\views\cuestionario\index.php:9)
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(869): CuestionarioController->renderFile()
+#1 H:\xampp\htdocs\yii\framework\web\CController.php(782): CuestionarioController->renderPartial()
+#2 H:\xampp\htdocs\SEMMIO\protected\controllers\CuestionarioController.php(82): CuestionarioController->render()
+#3 H:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CuestionarioController->actionIndex()
+#4 H:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CuestionarioController->runAction()
+#6 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CuestionarioController->filterAccessControl()
+#9 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 H:\xampp\htdocs\yii\framework\web\CController.php(265): CuestionarioController->runActionWithFilters()
+#12 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CuestionarioController->run()
+#13 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 H:\xampp\htdocs\SEMMIO\index.php(13): CWebApplication->run()
+REQUEST_URI=/SEMMIO/index.php/cuestionario/index
+in H:\xampp\htdocs\SEMMIO\protected\views\cuestionario\index.php (9)
+in H:\xampp\htdocs\SEMMIO\protected\controllers\CuestionarioController.php (82)
+in H:\xampp\htdocs\SEMMIO\index.php (13)
+2015/10/08 06:15:15 [error] [php] Trying to get property of non-object (H:\xampp\htdocs\SEMMIO\protected\views\cuestionario\index.php:9)
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(869): CuestionarioController->renderFile()
+#1 H:\xampp\htdocs\yii\framework\web\CController.php(782): CuestionarioController->renderPartial()
+#2 H:\xampp\htdocs\SEMMIO\protected\controllers\CuestionarioController.php(82): CuestionarioController->render()
+#3 H:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): CuestionarioController->actionIndex()
+#4 H:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CuestionarioController->runAction()
+#6 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CuestionarioController->filterAccessControl()
+#9 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 H:\xampp\htdocs\yii\framework\web\CController.php(265): CuestionarioController->runActionWithFilters()
+#12 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CuestionarioController->run()
+#13 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 H:\xampp\htdocs\SEMMIO\index.php(13): CWebApplication->run()
+REQUEST_URI=/SEMMIO/index.php/cuestionario/index
+in H:\xampp\htdocs\SEMMIO\protected\views\cuestionario\index.php (9)
+in H:\xampp\htdocs\SEMMIO\protected\controllers\CuestionarioController.php (82)
+in H:\xampp\htdocs\SEMMIO\index.php (13)
+2015/10/08 06:44:45 [error] [php] implode(): Invalid arguments passed (H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php:83)
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PreguntaController->runAction()
+#2 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): PreguntaController->filterAccessControl()
+#5 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 H:\xampp\htdocs\yii\framework\web\CController.php(265): PreguntaController->runActionWithFilters()
+#8 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PreguntaController->run()
+#9 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 H:\xampp\htdocs\SEMMIO\index.php(13): CWebApplication->run()
+REQUEST_URI=/SEMMIO/index.php/pregunta/create
+in H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php (83)
+in H:\xampp\htdocs\SEMMIO\index.php (13)
+2015/10/08 06:44:45 [error] [php] implode(): Invalid arguments passed (H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php:83)
+Stack trace:
+#0 H:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PreguntaController->runAction()
+#2 H:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 H:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 H:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): PreguntaController->filterAccessControl()
+#5 H:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 H:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 H:\xampp\htdocs\yii\framework\web\CController.php(265): PreguntaController->runActionWithFilters()
+#8 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PreguntaController->run()
+#9 H:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 H:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 H:\xampp\htdocs\SEMMIO\index.php(13): CWebApplication->run()
+REQUEST_URI=/SEMMIO/index.php/pregunta/create
+in H:\xampp\htdocs\SEMMIO\protected\controllers\PreguntaController.php (83)
+in H:\xampp\htdocs\SEMMIO\index.php (13)

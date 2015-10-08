@@ -2,5 +2,10 @@
 protected/index.sublime-workspace
 *.log
 protected/runtime/application.log
+assets/
+.gitignore
 protected/runtime/application.log
+*.log
+protected/controllers/GlosarioController.php
+protected/runtime/application.logprotected/runtime/application.log
 *.log
