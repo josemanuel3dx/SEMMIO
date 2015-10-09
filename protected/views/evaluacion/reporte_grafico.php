@@ -144,63 +144,6 @@ $this->menu=array(
 
 <h1>Resultado</h1>
 
-<?php $evaluacion=Evaluacion::model()->findByAttributes(array('id_evaluacion'=>$evaluacion_id)); ?>
-<?php $matriz=Matriz::model()->findByAttributes(array('id_matriz'=>$evaluacion->id_matriz)); ?>
-<?php $niveles=Nivel::model()->findAll(); ?>
-<?php $nive =array();
-
-$resultado_graficar = array();
-
-$repuestas_y_caracteristica = Yii::app()->db->createCommand("SELECT a.id_pregunta id_pregunta, a.id_respuesta metrica, ".
-	"b.id_caracteristica caracteristica, c.valor valor   ".
-	"FROM resultado a ".
-	"LEFT JOIN pregunta b ON a.id_pregunta = b.id_pregunta ".
-	"LEFT JOIN metrica c ON a.id_respuesta = c.id_metrica ".
-	"WHERE id_evaluacion = ".$evaluacion_id)->queryAll();
-	
-	foreach($niveles as $n){
-
-		$respuestas=0;
-		$valor_por_nivel = 0;
-		$id_pregunta_array = array();
-
-		foreach($repuestas_y_caracteristica as $ryc){
-		
-			$repuestas_y_caracteristica2 = Yii::app()->db->createCommand(" SELECT a.id_caracteristica id_caracteristica ".
-			     "FROM caracteristica a ".
-			     "WHERE id_caracteristica in (".$ryc['caracteristica'].") and id_nivel=".$n['id_nivel'])->queryAll();
-			
-			if(count($repuestas_y_caracteristica2)>=1){
-				$respuestas++;
-				$id_pregunta_array[]= $ryc['id_pregunta'];
-			
-				$resultados_por_nivel = Yii::app()->db->createCommand(" SELECT * ".
-					"FROM resultado a ".
-					"LEFT JOIN metrica b ON a.id_respuesta = b.id_metrica ".
-					"WHERE a.id_pregunta=".$ryc['id_pregunta']." and a.id_evaluacion = ".$evaluacion_id)->queryAll();
-					
-					foreach($resultados_por_nivel as $r)
-						$valor_por_nivel = $valor_por_nivel + $r['valor'];
-			}
-				
-		}
-				
-		unset($id_pregunta_array);
-			
-		if($respuestas!=0) 
-		    $valor_por_columna[]=round(($valor_por_nivel*100)/($respuestas*4),2);
-		else 
-            $valor_por_columna[]=0;
-	}
-	
-	$resultado_f = implode(", ",$valor_por_columna); 
-	
-    foreach($niveles as $niv)
-		$nive[] = $niv['nombre_nivel'];	
-	
-    $niveles_f = implode(", ",$nive);
-?>
-
 <input type="hidden" name="name_m" value="<?php echo $matriz->nombre_matriz;?>">
 <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 <input type="hidden" name="name_niveles" value="<?php echo $niveles_f ;?>">

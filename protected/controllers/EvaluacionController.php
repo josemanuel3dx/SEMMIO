@@ -337,7 +337,109 @@ class EvaluacionController extends Controller
 		 * 
 		 * */
 	public function actionReporte_Grafico(){
+
 		$evaluacion_id = $_GET['id_evaluacion'];
-		$this->render("reporte_grafico",array("evaluacion_id"=>$evaluacion_id));
+		$evaluacion=Evaluacion::model()->findByAttributes(array('id_evaluacion'=>$evaluacion_id)); 
+		$matriz=Matriz::model()->findByAttributes(array('id_matriz'=>$evaluacion->id_matriz)); 
+		$niveles=Nivel::model()->findAll();
+		$nive =array();
+
+		
+		$metodoEval = 1;
+
+
+		//Metodo por Celda
+		if($metodoEval == 1)
+		{
+			$resultado_graficar = array();
+
+			$repuestas_y_caracteristica = Yii::app()->db->createCommand("SELECT a.id_pregunta id_pregunta, a.id_respuesta metrica, ".
+				"b.id_caracteristica caracteristica, c.valor valor   ".
+				"FROM resultado a ".
+				"LEFT JOIN pregunta b ON a.id_pregunta = b.id_pregunta ".
+				"LEFT JOIN metrica c ON a.id_respuesta = c.id_metrica ".
+				"WHERE id_evaluacion = ".$evaluacion_id)->queryAll();
+				
+			foreach($niveles as $n){
+
+				$respuestas=0;
+				$valor_por_nivel = 0;
+				$id_pregunta_array = array();
+
+				foreach($repuestas_y_caracteristica as $ryc){
+				
+					$repuestas_y_caracteristica2 = Yii::app()->db->createCommand(" SELECT a.id_caracteristica id_caracteristica ".
+					     "FROM caracteristica a ".
+					     "WHERE id_caracteristica in (".$ryc['caracteristica'].") and id_nivel=".$n['id_nivel'])->queryAll();
+					
+					if(count($repuestas_y_caracteristica2)>=1){
+						$respuestas++;
+						$id_pregunta_array[]= $ryc['id_pregunta'];
+					
+						$resultados_por_nivel = Yii::app()->db->createCommand(" SELECT * ".
+							"FROM resultado a ".
+							"LEFT JOIN metrica b ON a.id_respuesta = b.id_metrica ".
+							"WHERE a.id_pregunta=".$ryc['id_pregunta']." and a.id_evaluacion = ".$evaluacion_id)->queryAll();
+							
+							foreach($resultados_por_nivel as $r)
+								$valor_por_nivel = $valor_por_nivel + $r['valor'];
+					}
+						
+				}
+						
+				unset($id_pregunta_array);
+					
+				if($respuestas!=0) 
+				    $valor_por_columna[]=round(($valor_por_nivel*100)/($respuestas*4),2);
+				else 
+		            $valor_por_columna[]=0;
+			}
+			
+			$resultado_f = implode(", ",$valor_por_columna); 
+			
+		    foreach($niveles as $niv)
+				$nive[] = $niv['nombre_nivel'];	
+			
+		    $niveles_f = implode(", ",$nive);
+
+		
+		}
+		else //Metodo por Aspectos
+		{
+			$dataEvaluacion = Yii::app()->db->createCommand("SELECT a.id_pregunta id_pregunta, a.id_respuesta metrica, ".
+				"b.id_caracteristica caracteristica, c.valor valor   ".
+				"FROM resultado a ".
+				"LEFT JOIN pregunta b ON a.id_pregunta = b.id_pregunta ".
+				"LEFT JOIN metrica c ON a.id_respuesta = c.id_metrica ".
+				"WHERE id_evaluacion = ".$evaluacion_id)->queryAll();
+			
+			$universos = array_fill(0, 6, 0);
+			$resultadoEvaluacion = array_fill(0, 6, 0);
+
+			foreach($dataEvaluacion as $value){
+			
+				$nivelesPregunta = Yii::app()->db->createCommand("SELECT id_nivel ".
+				     "FROM caracteristica ".
+				     "WHERE id_caracteristica in (".$value['caracteristica'].")")->queryAll();
+
+				foreach($nivelesPregunta as $nivel){
+					$universos[$nivel['id_nivel']-1] += 1;
+				}
+
+				$resultadoEvaluacion[$value['valor']] += 1;	
+			}
+		}
+
+
+
+		//Mostrar la vista 
+		$this->render("reporte_grafico",array(
+			"evaluacion_id"=>$evaluacion_id, 
+			"resultado_f"=>$resultado_f,
+			"niveles_f"=>$niveles_f,
+			"matriz"=>$matriz));
+
+		/*var_dump("<pre>".print_r($universos,TRUE)."</pre>");
+		exit();*/
 	}
 }
