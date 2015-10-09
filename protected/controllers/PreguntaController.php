@@ -227,17 +227,11 @@ class PreguntaController extends Controller
 		$caracteristica = Caracteristica::model()->findAllByAttributes(array('id_aspecto'=>$aspecto->id_aspecto));
 		
 		if(count($caracteristica)!=0){
-			$div = '<label for="Pregunta_id_aspecto" class="required">
-						Característica 
-						<span class="required">*</span>
-					</label>';
-			$div .= '<select multiple>';
+			$div = '';
 
 			foreach($caracteristica as $data):
 				$div .=' <option value="'.$data->id_caracteristica.'">'.$data->nombre_caracteristica.'</option>'; 
 			endforeach;
-
-			$div .= '</select>';
 
 		}else{
 

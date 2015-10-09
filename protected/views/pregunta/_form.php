@@ -7,22 +7,22 @@
 <script>
 
 	$(document).ready(function(){
-	    $("select[name=dynamic_select]").change(function(){
-		   id_aspecto = $('select[name=dynamic_select]').val();
+	    $("select[id=Pregunta_id_aspecto]").change(function(){
+		   id_aspecto = $('select[id=Pregunta_id_aspecto]').val();
 		   $.ajax({
 		       	url: <?php echo "'".CController::createUrl('pregunta/mostrar')."'"; ?>,
 	           	type: "GET",
-		       	data: {'id_aspecto' : $('select[name=dynamic_select]').val()},
+		       	data: {'id_aspecto' : $('select[id=Pregunta_id_aspecto]').val()},
 		       	dataType: 'json',
 		       	success: function(data){
-				   $("#show_dynamic_select").html(data.message);
+				   $("#Pregunta_id_caracteristica").html(data.message);
 		       	},
 		       	error: function(data){
-				   alert('Ol');
+				   alert('Error');
 			   	},
 	       	});
 	    });
-	    $('#dynamic_select').trigger('change');	
+	    $('#Pregunta_id_aspecto').trigger('change');	
 	});
 	
 </script>
@@ -43,7 +43,7 @@ echo $form->errorSummary(array($model,$b));
 
 ?>
 	<style type="text/css">
-		div.row#show_dynamic_select select {
+		#Pregunta_id_caracteristica {
 			width: 750px;
 			word-wrap:break-word;
 		}
@@ -59,22 +59,16 @@ echo $form->errorSummary(array($model,$b));
 		<?php echo $form->error($model,'descripcion_pregunta'); ?>
 	</div>
 
-	<!--<div class="row" id="broken">
-		<?php /*echo $form->labelEx($model,'id_caracteristica');*/ ?>
-			<?php /*echo $form->dropDownList($model, 'id_caracteristica', CHtml::listData(
-                    Caracteristica::model()->findAll(), 'id_caracteristica', 'nombre_caracteristica'), array('multiple'=>true ));*/ ?>
-	</div>-->
-
 	<div class="row">
 	<?php echo $form->labelEx($model,'id_aspecto'); ?>
 			<?php echo $form->dropDownList($model, 'id_aspecto', 
-					CHtml::listData(Aspecto::model()->findAll(), 'id_aspecto', 'nombre_aspecto'),
-					array("id"=>"dynamic_select", "name"=>"dynamic_select")
-					); ?>
+				CHtml::listData(Aspecto::model()->findAll(), 'id_aspecto', 'nombre_aspecto')); ?>
 	</div>
 
-	<div class="row" name="show_dynamic_select" id="show_dynamic_select">
-		
+	<div class="row">
+		<?php echo $form->labelEx($model,'id_caracteristica'); ?>
+			<?php echo $form->dropDownList($model, 'id_caracteristica', CHtml::listData(
+                    Caracteristica::model()->findAll(), 'id_caracteristica', 'nombre_caracteristica'), array('multiple'=>true )); ?>
 	</div>
 
 	<div class="row">
