@@ -59,6 +59,9 @@
 				<td>&nbsp;</td>
 			</tr>
 			<tr>
+				<td><b>PÁGINA </b> <?php echo " ". $paginaActual . " de " . $totalPaginas; ?></td>
+			</tr>
+			<tr>
 				<td>
 					<?php 
 						//Imprimir Errores de Validacion

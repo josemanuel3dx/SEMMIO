@@ -1,32 +1,34 @@
 <?php
 
-
 class EvaluacionForm extends CFormModel
 {
 	public $pregForm = array();
 	public $cantPreg = 0;
+	public $totalPaginas = 0;
 	public $preguntas = array();
 	public $dataVista = array();
 
-	public function EvaluacionForm($id_evaluacion,$id_matriz) {
+	public function EvaluacionForm($id_evaluacion,$id_matriz, $cantPregUser) {
 		parent::__construct();
-
+		
         //Traer todos los ids de los aspecto de la matriz dada
         $aspectos = Yii::app()->db->createCommand("SELECT * FROM aspecto WHERE id_matriz=".$id_matriz)->queryAll();
         $todas_carac = array();
+
         foreach($aspectos as $carac){
 			$todas_carac [] = $carac['id_aspecto']; 
 		}
+
 		$separado_por_comas = implode(",", $todas_carac);
-        
 
         //Preguntas asociadas a cada aspecto
         $this->preguntas = Yii::app()->db->createCommand("SELECT * FROM pregunta WHERE id_aspecto in (".$separado_por_comas.")")->queryAll();
         //Ordenar las preguntas SIN ASOCIACION CON LAS CLAVES	
 		sort($this->preguntas);
-		//var_dump("<pre>".print_r($this->preguntas ,TRUE)."</pre>");
+
 		//Cantidad de preguntas totales y restantes
 		$this->cantPreg = count($this->preguntas);
+		$this->totalPaginas = ceil($this->cantPreg/$cantPregUser);
     }
 
 	public function rules()

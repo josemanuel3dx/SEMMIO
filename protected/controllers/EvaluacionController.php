@@ -197,15 +197,14 @@ class EvaluacionController extends Controller
 		//Consultar evaluacion
 		$evaluacion=Evaluacion::model()->findByAttributes(array('id_evaluacion'=>$id_evaluacion));
 		//Form de evaluacion
-		$evalForm = new EvaluacionForm($id_evaluacion,$evaluacion->id_matriz);
-
+		$evalForm = new EvaluacionForm($id_evaluacion,$evaluacion->id_matriz, $cantPregUser);
 
 
 
 		//Pregunta Actual y cantidad de preguntas restantes
 		$preguntaActual = $evaluacion->pregunta_actual;
 		$cantPregRestantes = $evalForm->cantPreg - $evaluacion->pregunta_actual;
-
+		
 		//Validamos si se esta llegando al final del cuestionario
 		if($cantPregRestantes<$cantPregUser)
 			$cantPregUser = $cantPregRestantes;
@@ -217,7 +216,9 @@ class EvaluacionController extends Controller
 
 				Yii::app()->user->setFlash("error", "Usted debe responder todas las preguntas de esta sección para Continuar.");
 				$evalForm->generarDataVista($preguntaActual,$cantPregUser);
-				$this->render("cuestionario",array("id"=>$id_evaluacion, "dataVista" => $evalForm->dataVista));
+			
+				$this->render("cuestionario",array("id"=>$id_evaluacion, "dataVista" => $evalForm->dataVista, "paginaActual" => 
+					$evaluacion->pagina, "totalPaginas" => $evalForm->totalPaginas));
 				Yii::app()->end();
 			}
 			//Insertamos las preg y sus resp en resultado
@@ -227,18 +228,17 @@ class EvaluacionController extends Controller
 			}
 
 			Yii::app()->user->setFlash("success", "Sus respuestas anteriores fueron almacenadas correctamente.");
-			//Actualizamos el atributo preguntaActual
+			//Actualizamos el atributo preguntaActual y pagina actual
 			$evaluacion->pregunta_actual+=count($_POST['PregForm']);
+			$evaluacion->pagina+=1;
 			$opcion_respUpdate = $evaluacion->save();
 		}
 
 
-		
-
 		//Pregunta Actual y cantidad de preguntas restantes
 		$preguntaActual = $evaluacion->pregunta_actual;
 		$cantPregRestantes = $evalForm->cantPreg - $evaluacion->pregunta_actual;
-
+		
 		//Validamos si se esta llegando al final del cuestionario
 		if($cantPregRestantes<$cantPregUser)
 			$cantPregUser = $cantPregRestantes;
@@ -249,7 +249,7 @@ class EvaluacionController extends Controller
 			//Generar las preguntas a mostrar
 			$evalForm->generarDataVista($preguntaActual,$cantPregUser);
 			
-			$this->render("cuestionario",array("id"=>$id_evaluacion, "dataVista" => $evalForm->dataVista));
+			$this->render("cuestionario",array("id"=>$id_evaluacion, "dataVista" => $evalForm->dataVista, "paginaActual" => $evaluacion->pagina, "totalPaginas" => $evalForm->totalPaginas));
 
 		}
 		elseif ($cantPregRestantes==0) {
@@ -322,20 +322,11 @@ class EvaluacionController extends Controller
 		$return['message'] = $div;
 		echo json_encode($return);	 		 
 	}	 
-		 
+		 		
 	/**
-	  * Funcion para guardar las respuestas del usuario en el cuestionario
-	  * 
-	**/
-	public function actionProcesar_Cuestionario(){
-		
-		
-	}
-		
-	/**
-		 * Funcion para mostrar en un grafico los resultados de la evaluacion
-		 * 
-		 * */
+	* Funcion para mostrar en un grafico los resultados de la evaluacion
+	* 
+	* */
 	public function actionReporte_Grafico(){
 
 		$evaluacion_id = $_GET['id_evaluacion'];
