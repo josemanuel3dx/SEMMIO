@@ -72,17 +72,40 @@ echo $form->errorSummary(array($model,$b));
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($b,'id_metrica'); ?>
+			<label>Métricas de valor 0</label>
 			<?php echo $form->dropDownList($b, 'id_metrica', CHtml::listData(
-                Metrica::model()->findAll(), 'id_metrica', 'nombre_metrica','valor'), array('multiple'=>true )); ?>
-		</div>
+            Metrica::model()->findAllByAttributes(array('valor'=>0)), 'id_metrica', 'nombre_metrica','valor')); ?>
+	</div>
 
+	<div class="row">
+			<label>Métricas de valor 1</label>
+			<?php echo $form->dropDownList($b, 'id_metrica', CHtml::listData(
+            Metrica::model()->findAllByAttributes(array('valor'=>1)), 'id_metrica', 'nombre_metrica','valor')); ?>
+	</div>
+
+	<div class="row">
+			<label>Métricas de valor 2</label>
+			<?php echo $form->dropDownList($b, 'id_metrica', CHtml::listData(
+            Metrica::model()->findAllByAttributes(array('valor'=>2)), 'id_metrica', 'nombre_metrica','valor')); ?>
+	</div>
+
+	<div class="row">
+			<label>Métricas de valor 3</label>
+			<?php echo $form->dropDownList($b, 'id_metrica', CHtml::listData(
+            Metrica::model()->findAllByAttributes(array('valor'=>3)), 'id_metrica', 'nombre_metrica','valor')); ?>
+	</div>
+
+	<div class="row">
+			<label>Métricas de valor 4</label>
+			<?php echo $form->dropDownList($b, 'id_metrica', CHtml::listData(
+            Metrica::model()->findAllByAttributes(array('valor'=>4)), 'id_metrica', 'nombre_metrica','valor')); ?>
+	</div>
+		
 	<div class="row">
 		<?php echo $form->labelEx($model,'estatus_pregunta'); ?>
 		<?php $options = array ('1' => 'Activa', '0' => 'Inactivo'); 
 		echo CHtml::dropDownList('estatus_pregunta', '1', $options);?>
 	</div>
-
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar'); ?>

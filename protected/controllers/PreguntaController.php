@@ -68,16 +68,17 @@ class PreguntaController extends Controller
 		$model=new Pregunta;
 		$b = new Metrica;
 		
+		
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Pregunta'] , $_POST['Metrica']))
 		{
-			/*var_dump("<pre>".print_r($_POST['Pregunta'],TRUE)."</pre>");
-			exit();	*/
+			var_dump("<pre>".print_r($_POST['Metrica'],TRUE)."</pre>");
+			exit();
+			
 			$model->attributes=$_POST['Pregunta'];
 			$b->attributes=$_POST['Metrica'];
-			
 							
 			$model->descripcion_pregunta = $model->descripcion_pregunta;
 			$arr2 = implode(",",$model->attributes['id_caracteristica']);
