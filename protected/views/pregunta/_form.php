@@ -61,8 +61,19 @@ echo $form->errorSummary(array($model,$b));
 
 	<div class="row">
 	<?php echo $form->labelEx($model,'id_aspecto'); ?>
-			<?php echo $form->dropDownList($model, 'id_aspecto', 
-				CHtml::listData(Aspecto::model()->findAll(), 'id_aspecto', 'nombre_aspecto')); ?>
+			<?php 
+				if (isset($id_matriz)) {
+
+					echo $form->dropDownList($model, 'id_aspecto', 
+					CHtml::listData(Aspecto::model()->findAll(array("condition"=>"id_matriz =  $id_matriz")), 'id_aspecto', 'nombre_aspecto')); 
+				
+					} else {
+						
+						echo $form->dropDownList($model, 'id_aspecto', 
+					CHtml::listData(Aspecto::model()->findAll(), 'id_aspecto', 'nombre_aspecto')); 
+				
+				}
+			?>
 	</div>
 
 	<div class="row">

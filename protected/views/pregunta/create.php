@@ -15,5 +15,11 @@ $this->menu=array(
 
 <h1>Crear Pregunta</h1>
 
-<?php //$this->renderPartial('_form', array('model'=>$model)); ?>
-<?php $this->renderPartial('_form', array('model'=>$model,'b'=>$b)); ?>
+<?php 
+	
+	if (isset($id_matriz))
+		$this->renderPartial('_form', array('model'=>$model,'b'=>$b,'id_matriz'=>$id_matriz)); 
+	else
+		$this->renderPartial('_form', array('model'=>$model,'b'=>$b));
+
+?>

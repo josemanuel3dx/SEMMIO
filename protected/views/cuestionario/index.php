@@ -7,7 +7,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Crear Pregunta', 'url'=>array('/pregunta/create')),
+	array('label'=>'Crear Pregunta', 'url'=>array('/pregunta/create'), 'linkOptions'=>array('id'=>'yw0Create')),
 	//array('label'=>'Editar Pregunta', 'url'=>array('update')),
 	array('label'=>'Listar Preguntas','url'=>array('/pregunta/index')),
 );
@@ -25,6 +25,10 @@ $this->menu=array(
 		       	dataType: 'json',
 		       	success: function(data){
 				   $("#mostrar_cuestionario").html(data.message);
+
+				   $("#yw0Create").attr(
+				        "href", "/index.php/pregunta/create/" + $('select[name=matrix_cues]').val() 
+				   );
 		       	},
 		       	error: function(data){
 				   alert('ERROR');

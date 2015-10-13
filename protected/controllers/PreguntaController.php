@@ -109,10 +109,20 @@ class PreguntaController extends Controller
 			exit();
 		}*/
 
-		$this->render('create',array(
-			'model'=>$model,
-			'b'=>$b,
-		));
+
+		if (isset($_GET['id'])) {
+			$this->render('create',array(
+				'model'=>$model,
+				'b'=>$b,
+				'id_matriz'=>$_GET['id'],
+			));
+		} else {
+			$this->render('create',array(
+				'model'=>$model,
+				'b'=>$b,
+			));
+		}
+		
 		
 	}
 
