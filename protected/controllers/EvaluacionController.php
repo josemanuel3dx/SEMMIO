@@ -335,8 +335,11 @@ class EvaluacionController extends Controller
 		$niveles=Nivel::model()->findAll();
 		$nive =array();
 
-		
-		$metodoEval = 1;
+
+		//Metodo de Evalucion por defecto: Por aspetos
+		$metodoEval = 2;
+		if($evaluacion->id_matriz==1)
+			$metodoEval = 1;
 
 
 		//Metodo por Celda
@@ -397,28 +400,56 @@ class EvaluacionController extends Controller
 		}
 		else //Metodo por Aspectos
 		{
-			$dataEvaluacion = Yii::app()->db->createCommand("SELECT a.id_pregunta id_pregunta, a.id_respuesta metrica, ".
-				"b.id_caracteristica caracteristica, c.valor valor   ".
+
+			$dataEvaluacion = Yii::app()->db->createCommand("SELECT a.id_pregunta id_pregunta, a.id_respuesta id_metricaResp, ".
+				"b.id_metrica id_metrica, c.valor valor   ".
 				"FROM resultado a ".
-				"LEFT JOIN pregunta b ON a.id_pregunta = b.id_pregunta ".
-				"LEFT JOIN metrica c ON a.id_respuesta = c.id_metrica ".
+				"LEFT JOIN opcion_respuesta b ON a.id_pregunta = b.id_pregunta ".
+				"LEFT JOIN metrica c ON b.id_metrica = c.id_metrica ".
 				"WHERE id_evaluacion = ".$evaluacion_id)->queryAll();
-			
+
+
 			$universos = array_fill(0, 6, 0);
 			$resultadoEvaluacion = array_fill(0, 6, 0);
+			$metricasOrden = array_fill(0, 5, 0);
+			$ant = $dataEvaluacion[0]['id_pregunta'];
+			
 
 			foreach($dataEvaluacion as $value){
-			
-				$nivelesPregunta = Yii::app()->db->createCommand("SELECT id_nivel ".
-				     "FROM caracteristica ".
-				     "WHERE id_caracteristica in (".$value['caracteristica'].")")->queryAll();
 
-				foreach($nivelesPregunta as $nivel){
-					$universos[$nivel['id_nivel']-1] += 1;
+				$act = $value['id_pregunta'];
+				if($ant!=$act) {
+					for ($j=0; $j <= $metResp; $j++) {
+						if($metricasOrden[$j]==1)
+							$resultadoEvaluacion[$j] += 1;
+					}
+					$metricasOrden = array_fill(0, 5, 0);
+					$ant=$act;
 				}
 
-				$resultadoEvaluacion[$value['valor']] += 1;	
+				$metricasOrden[$value['valor']]=1;
+	
+				$universos[$value['valor']] += 1;
+
+				if($value['id_metricaResp'] == $value['id_metrica']) {
+					$metResp = $value['valor'];
+				}	
 			}
+			//Valores de la ultima pregunta
+			for ($j=0; $j <= $metResp; $j++) {
+				if($metricasOrden[$j]==1)
+					$resultadoEvaluacion[$j] += 1;
+			}
+
+
+			//Procesar resultados
+		    foreach($niveles as $key => $niv) {
+		    	$res[] = round(($resultadoEvaluacion[$key]/$universos[$key])*100,2);
+		    	$nivM[] = $niv['nombre_nivel'];	
+		    }
+			$resultado_f = implode(", ",$res);
+		    $niveles_f = implode(", ",$nivM);
+
 		}
 
 

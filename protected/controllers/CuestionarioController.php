@@ -134,10 +134,11 @@ class CuestionarioController extends Controller
 			<tr>
 			<ol>';
 
+			$contPreg = 1;
 		 	foreach($preguntas as $preguntas_f){ 
 
 				$div .=	'<tr><td>';
-				$div .= '<li>'.$preguntas_f['descripcion_pregunta'];
+				$div .= '<li>'.$contPreg.". ".$preguntas_f['descripcion_pregunta'];
 				$div .='<br />';
 				$posibles_respuestas = Yii::app()->db->createCommand("SELECT a.id_pregunta id_pregunta, b.nombre_metrica nombre, b.valor ponderacion, b.id_metrica id_metrica
 				FROM opcion_respuesta a
@@ -150,6 +151,8 @@ class CuestionarioController extends Controller
 				}
 					
 				$div .='</td></tr><tr><td>&nbsp;</td></tr>';
+
+				$contPreg++;
 			}
 
 			$div .='</ol></table>';
