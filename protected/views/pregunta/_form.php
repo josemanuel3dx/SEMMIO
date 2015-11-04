@@ -35,7 +35,7 @@
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>true,
+	'enableAjaxValidation'=>false,
 		
 )); 
 
@@ -61,19 +61,19 @@ echo $form->errorSummary(array($model,$b));
 
 	<div class="row">
 	<?php echo $form->labelEx($model,'id_aspecto'); ?>
-			<?php 
-				if (isset($id_matriz)) {
+		<?php 
+			if (isset($id_matriz)) {
 
+				echo $form->dropDownList($model, 'id_aspecto', 
+				CHtml::listData(Aspecto::model()->findAll(array("condition"=>"id_matriz =  $id_matriz")), 'id_aspecto', 'nombre_aspecto')); 
+			
+				} else {
+					
 					echo $form->dropDownList($model, 'id_aspecto', 
-					CHtml::listData(Aspecto::model()->findAll(array("condition"=>"id_matriz =  $id_matriz")), 'id_aspecto', 'nombre_aspecto')); 
-				
-					} else {
-						
-						echo $form->dropDownList($model, 'id_aspecto', 
-					CHtml::listData(Aspecto::model()->findAll(), 'id_aspecto', 'nombre_aspecto')); 
-				
-				}
-			?>
+				CHtml::listData(Aspecto::model()->findAll(), 'id_aspecto', 'nombre_aspecto')); 
+			
+			}
+		?>
 	</div>
 
 	<div class="row">
@@ -84,32 +84,37 @@ echo $form->errorSummary(array($model,$b));
 
 	<div class="row">
 			<label>Métricas de valor 0</label>
-			<?php echo $form->dropDownList($b, 'id_metrica', CHtml::listData(
-            Metrica::model()->findAllByAttributes(array('valor'=>0)), 'id_metrica', 'nombre_metrica','valor')); ?>
+			<?php echo $form->dropDownList($b, 'id_metrica[]', CHtml::listData(
+            Metrica::model()->findAllByAttributes(array('valor'=>0)), 'id_metrica', 'nombre_metrica'),
+            array('empty' => '(Seleccione)')); ?>
 	</div>
 
 	<div class="row">
 			<label>Métricas de valor 1</label>
-			<?php echo $form->dropDownList($b, 'id_metrica', CHtml::listData(
-            Metrica::model()->findAllByAttributes(array('valor'=>1)), 'id_metrica', 'nombre_metrica','valor')); ?>
+			<?php echo $form->dropDownList($b, 'id_metrica[]', CHtml::listData(
+            Metrica::model()->findAllByAttributes(array('valor'=>1)), 'id_metrica', 'nombre_metrica'),
+            array('empty' => '(Seleccione)')); ?>
 	</div>
 
 	<div class="row">
 			<label>Métricas de valor 2</label>
-			<?php echo $form->dropDownList($b, 'id_metrica', CHtml::listData(
-            Metrica::model()->findAllByAttributes(array('valor'=>2)), 'id_metrica', 'nombre_metrica','valor')); ?>
+			<?php echo $form->dropDownList($b, 'id_metrica[]', CHtml::listData(
+            Metrica::model()->findAllByAttributes(array('valor'=>2)), 'id_metrica', 'nombre_metrica'),
+            array('empty' => '(Seleccione)')); ?>
 	</div>
 
 	<div class="row">
 			<label>Métricas de valor 3</label>
-			<?php echo $form->dropDownList($b, 'id_metrica', CHtml::listData(
-            Metrica::model()->findAllByAttributes(array('valor'=>3)), 'id_metrica', 'nombre_metrica','valor')); ?>
+			<?php echo $form->dropDownList($b, 'id_metrica[]', CHtml::listData(
+            Metrica::model()->findAllByAttributes(array('valor'=>3)), 'id_metrica', 'nombre_metrica'),
+            array('empty' => '(Seleccione)')); ?>
 	</div>
 
 	<div class="row">
 			<label>Métricas de valor 4</label>
-			<?php echo $form->dropDownList($b, 'id_metrica', CHtml::listData(
-            Metrica::model()->findAllByAttributes(array('valor'=>4)), 'id_metrica', 'nombre_metrica','valor')); ?>
+			<?php echo $form->dropDownList($b, 'id_metrica[]', CHtml::listData(
+            Metrica::model()->findAllByAttributes(array('valor'=>4)), 'id_metrica', 'nombre_metrica'),
+            array('empty' => '(Seleccione)')); ?>
 	</div>
 		
 	<div class="row">

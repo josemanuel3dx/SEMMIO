@@ -68,17 +68,15 @@ class PreguntaController extends Controller
 		$model=new Pregunta;
 		$b = new Metrica;
 		
-		
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Pregunta'] , $_POST['Metrica']))
 		{
-			var_dump("<pre>".print_r($_POST['Metrica'],TRUE)."</pre>");
-			exit();
-			
+
 			$model->attributes=$_POST['Pregunta'];
 			$b->attributes=$_POST['Metrica'];
+			
 							
 			$model->descripcion_pregunta = $model->descripcion_pregunta;
 			$arr2 = implode(",",$model->attributes['id_caracteristica']);
@@ -87,27 +85,29 @@ class PreguntaController extends Controller
 			$model->id_aspecto = $model->id_aspecto;
 			$model->estatus_pregunta = $model->estatus_pregunta;
 			$model->save();
-		
-			$arr = implode("," , $b->attributes['id_metrica']);
-			$porciones = explode(",", $arr);
-			foreach($porciones as $met){
-					$c= new OpcionRespuesta;
-					$c->isNewRecord = true;
-				error_log('Metrica_id: '.$met);
-					$c->id_metrica =$met;
-					$c->id_pregunta = $model->id_pregunta;
-					
-					$c->save();
-					
-				}
-				$this->redirect(array('view','id'=>$model->id_pregunta));
-		}
 
-		/*else
-		{
-			var_dump("<pre>".print_r($model,TRUE)."</pre>");
-			exit();
-		}*/
+
+			$postMetricas = array();
+			foreach ($_POST['Metrica']['id_metrica'] as $value) {
+				if ($value!=="") {
+					$postMetricas[] = $value;
+				}
+			}
+
+
+			foreach($postMetricas as $met)
+			{
+				$c = new OpcionRespuesta;
+				$c->isNewRecord = true;
+				error_log('Metrica_id: '.$met);
+				$c->id_metrica = $met;
+				$c->id_pregunta = $model->id_pregunta;
+				$c->save();
+				
+			}
+
+			$this->redirect(array('view','id'=>$model->id_pregunta));
+		}
 
 
 		if (isset($_GET['id'])) {
