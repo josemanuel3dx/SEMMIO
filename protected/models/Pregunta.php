@@ -28,7 +28,7 @@ class Pregunta extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_caracteristica, id_aspecto','required'),
+			array('descripcion_pregunta, id_caracteristica, id_aspecto','required'),
 			array('id_aspecto, estatus_pregunta', 'numerical', 'integerOnly'=>true),
 			array('descripcion_pregunta, id_caracteristica', 'length', 'max'=>600),
 			// The following rule is used by search().

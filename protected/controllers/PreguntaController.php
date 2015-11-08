@@ -73,20 +73,11 @@ class PreguntaController extends Controller
 
 		if(isset($_POST['Pregunta'] , $_POST['Metrica']))
 		{
-
 			$model->attributes=$_POST['Pregunta'];
 			$b->attributes=$_POST['Metrica'];
-			
-							
-			$model->descripcion_pregunta = $model->descripcion_pregunta;
-			$arr2 = implode(",",$model->attributes['id_caracteristica']);
-			$model->id_caracteristica=$arr2;
-			
-			$model->id_aspecto = $model->id_aspecto;
-			$model->estatus_pregunta = $model->estatus_pregunta;
-			$model->save();
 
 
+			//Filtrado de las metricas
 			$postMetricas = array();
 			foreach ($_POST['Metrica']['id_metrica'] as $value) {
 				if ($value!=="") {
@@ -94,19 +85,71 @@ class PreguntaController extends Controller
 				}
 			}
 
+			//Validaciones
+			$boolDesc = empty($_POST['Pregunta']['descripcion_pregunta']);
+			$boolCarac = empty($_POST['Pregunta']['id_caracteristica']);
 
-			foreach($postMetricas as $met)
-			{
-				$c = new OpcionRespuesta;
-				$c->isNewRecord = true;
-				error_log('Metrica_id: '.$met);
-				$c->id_metrica = $met;
-				$c->id_pregunta = $model->id_pregunta;
-				$c->save();
-				
+
+			//Validar que las metricas no esten repetidas
+			$boolRep = FALSE;
+			if(count($postMetricas)>0) {
+				$arr3 = implode(",",$postMetricas);
+				$postMetricasNombre = Yii::app()->db->createCommand("SELECT nombre_metrica FROM metrica WHERE id_metrica in (".$arr3.")")->queryAll();
+	        	
+				foreach ($postMetricasNombre as $key => $value) {
+					$valueM = $value['nombre_metrica'];
+					if(strpos($valueM, '(') !== FALSE)
+						$postMetricasNombre[$key]  = trim(substr($valueM, 0, strpos($valueM, '(')));
+					else
+						$postMetricasNombre[$key]  = $valueM;
+				}
+
+				$resulCant = count($postMetricasNombre);
+				$resulValidar = array_unique($postMetricasNombre);
+
+				if($resulCant != count($resulValidar))
+					$boolRep = TRUE;
+					
 			}
 
-			$this->redirect(array('view','id'=>$model->id_pregunta));
+
+
+			//Mostrar mensajes de error
+			if ((count($postMetricas) <= 1) || $boolDesc || $boolCarac || $boolRep) {
+
+				if($boolDesc)
+					Yii::app()->user->setFlash("error1", "El campo Descripcion Pregunta no debe estar vacío.");
+				if($boolCarac)
+					Yii::app()->user->setFlash("error2", "Usted debe seleccionar como mínimo 1 Característica");
+				if(count($postMetricas) <= 1)
+					Yii::app()->user->setFlash("error3", "Usted debe seleccionar como mínimo 2 Métricas.");
+				if($boolRep)
+					Yii::app()->user->setFlash("error4", "Usted ha seleccionado Métricas con nombres repetidos.");
+			
+			//Crear pregunta	
+			} else {
+
+				$arr2 = implode(",",$model->attributes['id_caracteristica']);
+				$model->id_caracteristica=$arr2;
+
+				if($model->save()) {
+					foreach($postMetricas as $met)
+					{
+						$c = new OpcionRespuesta;
+						$c->isNewRecord = true;
+						error_log('Metrica_id: '.$met);
+						$c->id_metrica = $met;
+						$c->id_pregunta = $model->id_pregunta;
+						$c->save();
+						
+					}
+					$this->redirect(array('view','id'=>$model->id_pregunta));
+				}
+
+			}
+
+			//var_dump("<pre>".print_r($postMetricasNombre,TRUE)."</pre>");
+			//exit();
 		}
 
 

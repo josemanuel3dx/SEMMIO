@@ -77,15 +77,15 @@
 			<ol>
 				<?php //var_dump("<pre>".print_r($preguntas,TRUE)."</pre>"); ?>
 
-				<?php foreach($dataVista as $pregunta) { ?>
+				<?php foreach($dataVista as $id => $pregunta) { ?>
 
 					<tr>
-						<td> <?php echo '<li>'.$pregunta['descripcion_pregunta']; ?> <br /><br />
+						<td> <?php echo '<li style="list-style-type:none">'.(($id+1)+(($paginaActual-1)*6)).". ".$pregunta['descripcion_pregunta']; ?> <br /><br />
 				
 							<?php
 
 								foreach($pregunta['metricas'] as $value) {
-									echo '<input type="radio" name="PregForm['.$pregunta['id_pregunta'].']" value="'.$value['id_metrica'].'">'.$value['ponderacion'].') '.$value['nombre'].'<br />'; 
+									echo '<input type="radio" name="PregForm['.$pregunta['id_pregunta'].']" value="'.$value['id_metrica'].'">'." ".$value['ponderacion'].') '.$value['nombre'].'<br />'; 
 									if($value['ponderacion'] == 0) 
 										echo '<br />';
 								}
