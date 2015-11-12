@@ -212,8 +212,8 @@ class MatrizController extends Controller
 			$div .= '</tr>';
 	
 			foreach($aspecto as $data2):
-				
-				$div .= '<tr><td>'.$data2->nombre_aspecto.'</td>';
+			
+				$div .= '<td style="background: #C9E0ED; font-weight:bold;"><a href="#" title="'. $data2->definicion_aspecto.'">'.$data2->nombre_aspecto.'</a></td>';
 				$caracteristica = Caracteristica::model()->findAllByAttributes(array('id_aspecto'=>$data2->id_aspecto));
 				
 				foreach($caracteristica as $data3):
