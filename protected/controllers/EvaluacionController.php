@@ -342,114 +342,184 @@ class EvaluacionController extends Controller
 			$metodoEval = 1;
 
 
-		//Metodo por Celda
-		if($metodoEval == 1)
-		{
-			$resultado_graficar = array();
 
-			$repuestas_y_caracteristica = Yii::app()->db->createCommand("SELECT a.id_pregunta id_pregunta, a.id_respuesta metrica, ".
-				"b.id_caracteristica caracteristica, c.valor valor   ".
-				"FROM resultado a ".
-				"LEFT JOIN pregunta b ON a.id_pregunta = b.id_pregunta ".
-				"LEFT JOIN metrica c ON a.id_respuesta = c.id_metrica ".
-				"WHERE id_evaluacion = ".$evaluacion_id)->queryAll();
-				
-			foreach($niveles as $n){
 
-				$respuestas=0;
-				$valor_por_nivel = 0;
-				$id_pregunta_array = array();
+		//Inicio 
+		$dataAspectos = Yii::app()->db->createCommand("SELECT id_aspecto, nombre_aspecto "."FROM aspecto ".
+			"WHERE id_matriz = ".$evaluacion->id_matriz)->queryAll();
 
-				foreach($repuestas_y_caracteristica as $ryc){
-				
-					$repuestas_y_caracteristica2 = Yii::app()->db->createCommand(" SELECT a.id_caracteristica id_caracteristica ".
-					     "FROM caracteristica a ".
-					     "WHERE id_caracteristica in (".$ryc['caracteristica'].") and id_nivel=".$n['id_nivel'])->queryAll();
+		$universoGeneral = array_fill(0, 6, 0);
+		$resultadoGeneral = array_fill(0, 6, 0);
+		$dataReporte[0] = array();
+
+
+
+		//Metodo 1: Por Aspectos
+
+		if($metodoEval != 1) {
+
+
+			foreach ($dataAspectos as $keyA => $valueA) {
+
+				$dataPreguntas = Yii::app()->db->createCommand("SELECT a.id_pregunta id_pregunta, a.id_respuesta id_metricaResp ".
+					"FROM resultado a ".
+					"LEFT JOIN pregunta p ON a.id_pregunta = p.id_pregunta ".
+					"WHERE a.id_evaluacion = ".$evaluacion_id." AND p.id_aspecto = ".$valueA['id_aspecto'])->queryAll();
+
+
+				$universos = array_fill(0, 6, 0);
+				$resultados = array_fill(0, 6, 0);
+				$metricasOrden = array_fill(0, 5, 0);
+
+			
+				foreach ($dataPreguntas as $valueP) {
 					
-					if(count($repuestas_y_caracteristica2)>=1){
-						$respuestas++;
-						$id_pregunta_array[]= $ryc['id_pregunta'];
-					
-						$resultados_por_nivel = Yii::app()->db->createCommand(" SELECT * ".
-							"FROM resultado a ".
-							"LEFT JOIN metrica b ON a.id_respuesta = b.id_metrica ".
-							"WHERE a.id_pregunta=".$ryc['id_pregunta']." and a.id_evaluacion = ".$evaluacion_id)->queryAll();
-							
-							foreach($resultados_por_nivel as $r)
-								$valor_por_nivel = $valor_por_nivel + $r['valor'];
+					$dataMetricas = Yii::app()->db->createCommand("SELECT a.id_metrica id_metrica, b.valor valor ".
+						"FROM opcion_respuesta a ".
+						"LEFT JOIN metrica b ON a.id_metrica = b.id_metrica ".
+						"WHERE a.id_pregunta = ".$valueP['id_pregunta'])->queryAll();
+
+					foreach ($dataMetricas as $valueM) {
+
+						$metricasOrden[$valueM['valor']]=1;
+						$universos[$valueM['valor']] += 1;
+						$universoGeneral[$valueM['valor']] += 1;
+
+						if($valueP['id_metricaResp'] == $valueM['id_metrica']) {
+							$metResp = $valueM['valor'];
+						}
 					}
-						
-				}
-						
-				unset($id_pregunta_array);
 					
-				if($respuestas!=0) 
-				    $valor_por_columna[]=round(($valor_por_nivel*100)/($respuestas*4),2);
-				else 
-		            $valor_por_columna[]=0;
+					for ($j=0; $j <= $metResp; $j++) {
+						if($metricasOrden[$j]==1) {
+							$resultados[$j] += 1;
+							$resultadoGeneral[$j] += 1;
+						}
+							
+					}
+
+					$metricasOrden = array_fill(0, 5, 0);
+
+				}
+				
+
+				//Procesamiento para cada Grafica Individual de Aspectos
+
+				$nameCaracteristicas = Yii::app()->db->createCommand("SELECT nombre_caracteristica, id_nivel ".
+					"FROM caracteristica ".
+					"WHERE id_aspecto = ".$valueA['id_aspecto']." ".
+					"ORDER BY id_nivel")->queryAll();
+
+				for ($i=0; $i < count($niveles); $i++) { 
+					$resulProcesados[$i] = round(($resultados[$i]/$universos[$i])*100,2);
+			    	$nivelesName[$i] = "DI".($keyA+1).($i+1);
+			    	$nivelesDesc[$nivelesName[$i]] = $nameCaracteristicas[$i]['nombre_caracteristica'];
+				}
+
+			    $resultado_f = implode(",",$resulProcesados);
+			    $niveles_f = implode(",",$nivelesName);
+			    $nombre_grafica =  "Niveles de Madurez para el Aspecto ".$valueA['nombre_aspecto'];
+
+
+			    $dataReporte[] = array($resultado_f,$niveles_f,$valueA['id_aspecto'],$nombre_grafica);
+
 			}
-			
-			$resultado_f = implode(", ",$valor_por_columna); 
-			
-		    foreach($niveles as $niv)
-				$nive[] = $niv['nombre_nivel'];	
-			
-		    $niveles_f = implode(", ",$nive);
+
+			//Procesamiento General
+
+			foreach($niveles as $keyN => $valueN) {
+		    	$resulProcesados[$keyN] = round(($resultadoGeneral[$keyN]/$universoGeneral[$keyN])*100,2);
+		    	$nivelesName[$keyN] = $valueN['nombre_nivel'];
+		    	$nivelesDesc[$nivelesName[$keyN]] = "";
+		    }
+
+		    $resultado_f = implode(",",$resulProcesados);
+		    $niveles_f = implode(",",$nivelesName);
+		    $nombre_grafica =  $matriz->nombre_matriz;
+
+		    $dataReporte[0] = array($resultado_f,$niveles_f,"resulGeneral",$nombre_grafica);
+
+
 
 		
 		}
-		else //Metodo por Aspectos
-		{
+		//Metodo 2: Por Celdas
+		else {
 
-			$dataEvaluacion = Yii::app()->db->createCommand("SELECT a.id_pregunta id_pregunta, a.id_respuesta id_metricaResp, ".
-				"b.id_metrica id_metrica, c.valor valor   ".
-				"FROM resultado a ".
-				"LEFT JOIN opcion_respuesta b ON a.id_pregunta = b.id_pregunta ".
-				"LEFT JOIN metrica c ON b.id_metrica = c.id_metrica ".
-				"WHERE id_evaluacion = ".$evaluacion_id)->queryAll();
+			foreach ($dataAspectos as $keyA => $valueA) {
+
+				$dataPreguntas = Yii::app()->db->createCommand("SELECT a.id_pregunta id_pregunta, p.id_caracteristica id_caracteristica, c.valor valor ".
+					"FROM resultado a ".
+					"LEFT JOIN pregunta p ON a.id_pregunta = p.id_pregunta ".
+					"LEFT JOIN metrica c ON a.id_respuesta = c.id_metrica ".
+					"WHERE a.id_evaluacion = ".$evaluacion_id." AND p.id_aspecto = ".$valueA['id_aspecto'])->queryAll();
 
 
-			$universos = array_fill(0, 6, 0);
-			$resultadoEvaluacion = array_fill(0, 6, 0);
-			$metricasOrden = array_fill(0, 5, 0);
-			$ant = $dataEvaluacion[0]['id_pregunta'];
+				$universos = array_fill(0, 6, 0);
+				$resultados = array_fill(0, 6, 0);
+
 			
+				foreach ($dataPreguntas as $valueP) {
 
-			foreach($dataEvaluacion as $value){
+					$dataCaracteristicas = Yii::app()->db->createCommand("SELECT id_nivel ".
+						"FROM caracteristica ".
+						"WHERE id_caracteristica in (".$valueP['id_caracteristica'].")")->queryAll();
 
-				$act = $value['id_pregunta'];
-				if($ant!=$act) {
-					for ($j=0; $j <= $metResp; $j++) {
-						if($metricasOrden[$j]==1)
-							$resultadoEvaluacion[$j] += 1;
+					//var_dump("<pre>".print_r($re,TRUE)."</pre>");
+
+					foreach ($dataCaracteristicas as $valueC) {
+
+						$k = $valueC['id_nivel'];
+
+						$universos[$k] += 1;
+						$universoGeneral[$k] += 1;
+
+						$resultados[$k] += $valueP['valor'];
+						$resultadoGeneral[$k] += $valueP['valor'];
 					}
-					$metricasOrden = array_fill(0, 5, 0);
-					$ant=$act;
+
+				}
+				
+
+				//Procesamiento para cada Grafica Individual de Aspectos
+
+				$nameCaracteristicas = Yii::app()->db->createCommand("SELECT nombre_caracteristica, id_nivel ".
+					"FROM caracteristica ".
+					"WHERE id_aspecto = ".$valueA['id_aspecto']." ".
+					"ORDER BY id_nivel")->queryAll();
+
+				for ($i=0; $i < count($niveles); $i++) { 
+					$resulProcesados[$i] = round(($resultados[$i+1]/($universos[$i+1]*4))*100,2);
+			    	$nivelesName[$i] = "DEPT".($keyA+1).($i+1);
+			    	$nivelesDesc[$nivelesName[$i]] = $nameCaracteristicas[$i]['nombre_caracteristica'];
 				}
 
-				$metricasOrden[$value['valor']]=1;
-	
-				$universos[$value['valor']] += 1;
+			    $resultado_f = implode(",",$resulProcesados);
+			    $niveles_f = implode(",",$nivelesName);
+			    $nombre_grafica =  "Niveles de Madurez para el Aspecto ".$valueA['nombre_aspecto'];
 
-				if($value['id_metricaResp'] == $value['id_metrica']) {
-					$metResp = $value['valor'];
-				}	
-			}
-			//Valores de la ultima pregunta
-			for ($j=0; $j <= $metResp; $j++) {
-				if($metricasOrden[$j]==1)
-					$resultadoEvaluacion[$j] += 1;
+
+			    $dataReporte[] = array($resultado_f,$niveles_f,$valueA['id_aspecto'],$nombre_grafica);
+
 			}
 
 
-			//Procesar resultados
-		    foreach($niveles as $key => $niv) {
-		    	$res[] = round(($resultadoEvaluacion[$key]/$universos[$key])*100,2);
-		    	$nivM[] = $niv['nombre_nivel'];	
+			//Procesamiento General
+
+			foreach($niveles as $keyN => $valueN) {
+		    	$resulProcesados[$keyN] = round(($resultadoGeneral[$keyN+1]/($universoGeneral[$keyN+1]*4))*100,2);
+		    	$nivelesName[$keyN] = $valueN['nombre_nivel'];
+		    	$nivelesDesc[$nivelesName[$keyN]] = "";
 		    }
-			$resultado_f = implode(", ",$res);
-		    $niveles_f = implode(", ",$nivM);
 
+		    $resultado_f = implode(",",$resulProcesados);
+		    $niveles_f = implode(",",$nivelesName);
+		    $nombre_grafica =  $matriz->nombre_matriz;
+
+		    $dataReporte[0] = array($resultado_f,$niveles_f,"resulGeneral",$nombre_grafica);
+
+
+			
 		}
 
 
@@ -457,9 +527,9 @@ class EvaluacionController extends Controller
 		//Mostrar la vista 
 		$this->render("reporte_grafico",array(
 			"evaluacion_id"=>$evaluacion_id, 
-			"resultado_f"=>$resultado_f,
+			"nivelesDesc"=>$nivelesDesc,
 			"niveles_f"=>$niveles_f,
-			"matriz"=>$matriz));
+			"dataVista" => $dataReporte));
 
 		/*var_dump("<pre>".print_r($universos,TRUE)."</pre>");
 		exit();*/
