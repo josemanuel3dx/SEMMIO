@@ -350,13 +350,16 @@ class EvaluacionController extends Controller
 
 		$universoGeneral = array_fill(0, 6, 0);
 		$resultadoGeneral = array_fill(0, 6, 0);
-		$dataReporte[0] = array();
+		
 
 
 
 		//Metodo 1: Por Aspectos
 
 		if($metodoEval != 1) {
+			
+
+			$dataReporte[0] = array(); //Para mostrar la grafica general
 
 
 			foreach ($dataAspectos as $keyA => $valueA) {
@@ -405,14 +408,14 @@ class EvaluacionController extends Controller
 
 				//Procesamiento para cada Grafica Individual de Aspectos
 
-				$nameCaracteristicas = Yii::app()->db->createCommand("SELECT nombre_caracteristica, id_nivel ".
+				$nameCaracteristicas = Yii::app()->db->createCommand("SELECT nombre_caracteristica, id_nivel, codigo ".
 					"FROM caracteristica ".
 					"WHERE id_aspecto = ".$valueA['id_aspecto']." ".
 					"ORDER BY id_nivel")->queryAll();
 
 				for ($i=0; $i < count($niveles); $i++) { 
 					$resulProcesados[$i] = round(($resultados[$i]/$universos[$i])*100,2);
-			    	$nivelesName[$i] = "DI".($keyA+1).($i+1);
+			    	$nivelesName[$i] = $nameCaracteristicas[$i]['codigo'];
 			    	$nivelesDesc[$nivelesName[$i]] = $nameCaracteristicas[$i]['nombre_caracteristica'];
 				}
 
@@ -437,14 +440,14 @@ class EvaluacionController extends Controller
 		    $niveles_f = implode(",",$nivelesName);
 		    $nombre_grafica =  $matriz->nombre_matriz;
 
+
 		    $dataReporte[0] = array($resultado_f,$niveles_f,"resulGeneral",$nombre_grafica);
-
-
 
 		
 		}
 		//Metodo 2: Por Celdas
 		else {
+
 
 			foreach ($dataAspectos as $keyA => $valueA) {
 
@@ -483,14 +486,14 @@ class EvaluacionController extends Controller
 
 				//Procesamiento para cada Grafica Individual de Aspectos
 
-				$nameCaracteristicas = Yii::app()->db->createCommand("SELECT nombre_caracteristica, id_nivel ".
+				$nameCaracteristicas = Yii::app()->db->createCommand("SELECT nombre_caracteristica, id_nivel, codigo ".
 					"FROM caracteristica ".
 					"WHERE id_aspecto = ".$valueA['id_aspecto']." ".
 					"ORDER BY id_nivel")->queryAll();
 
 				for ($i=0; $i < count($niveles); $i++) { 
 					$resulProcesados[$i] = round(($resultados[$i+1]/($universos[$i+1]*4))*100,2);
-			    	$nivelesName[$i] = "DEPT".($keyA+1).($i+1);
+			    	$nivelesName[$i] = $nameCaracteristicas[$i]['codigo'];
 			    	$nivelesDesc[$nivelesName[$i]] = $nameCaracteristicas[$i]['nombre_caracteristica'];
 				}
 
@@ -516,9 +519,9 @@ class EvaluacionController extends Controller
 		    $niveles_f = implode(",",$nivelesName);
 		    $nombre_grafica =  $matriz->nombre_matriz;
 
-		    $dataReporte[0] = array($resultado_f,$niveles_f,"resulGeneral",$nombre_grafica);
+		    
 
-
+		    //$dataReporte[0] = array($resultado_f,$niveles_f,"resulGeneral",$nombre_grafica);
 			
 		}
 
